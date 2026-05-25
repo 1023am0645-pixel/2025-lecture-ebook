@@ -1,0 +1,1280 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>2025 하반기 신입직원 입문교육 | 분석 평가 리포트</title>
+<meta name="application-name" content="2025 하반기 신입직원 입문교육 | 분석 평가 리포트">
+<meta property="og:title" content="2025 하반기 신입직원 입문교육 | 분석 평가 리포트">
+<meta property="og:site_name" content="2025 하반기 신입직원 입문교육 | 분석 평가 리포트">
+<meta property="og:description" content="2025 하반기 신입직원 입문교육 분석 평가 전자책">
+<meta name="twitter:title" content="2025 하반기 신입직원 입문교육 | 분석 평가 리포트">
+<meta name="twitter:description" content="2025 하반기 신입직원 입문교육 분석 평가 전자책">
+<style>
+/* ============ 디자인 시스템 ============ */
+:root {
+  /* Dark (default) */
+  --bg: #0c0c0f;
+  --bg-soft: #131318;
+  --bar: rgba(14, 14, 18, .92);
+  --paper: #131318;
+  --paper-left: #15151a;
+  --ink: #ececea;
+  --ink-soft: #bcbcb8;
+  --muted: #7a7a82;
+  --dim: #4a4a52;
+  --line: #25252b;
+  --line-soft: #1d1d22;
+  --accent: #d4a843;      /* warm amber - 강조 */
+  --accent-soft: #b8922e;
+  --speech: #7fccc5;     /* teal - 대화체 */
+  --speech-dim: #4fa8a0;
+  --rule: #2a2a31;
+  --shadow: 0 30px 80px rgba(0,0,0,.55), 0 2px 10px rgba(0,0,0,.4);
+  --hilite-bg: rgba(255,255,255,.025);
+  --scale: 1;
+}
+body.light {
+  --bg: #f1eee8;
+  --bg-soft: #fafaf7;
+  --bar: rgba(250, 248, 243, .95);
+  --paper: #fbfaf6;
+  --paper-left: #fdfcf9;
+  --ink: #15151a;
+  --ink-soft: #2c2c33;
+  --muted: #6b6b73;
+  --dim: #a7a7ad;
+  --line: #dcd9d1;
+  --line-soft: #e6e3db;
+  --accent: #a06518;      /* warm brown */
+  --accent-soft: #7a4c10;
+  --speech: #1e7a6e;     /* teal */
+  --speech-dim: #155f57;
+  --rule: #c8c4ba;
+  --shadow: 0 30px 70px rgba(60,50,30,.16), 0 2px 8px rgba(60,50,30,.08);
+  --hilite-bg: rgba(0,0,0,.025);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  overflow: hidden;
+  color: var(--ink);
+  background: var(--bg);
+  font-family: 'Pretendard', 'Pretendard Variable', -apple-system, BlinkMacSystemFont,
+    'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  font-feature-settings: 'ss01', 'cv01', 'tnum';
+  word-break: keep-all;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============ 상단바 ============ */
+.topbar {
+  height: 64px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) minmax(140px, 300px) 78px auto;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 22px;
+  color: var(--ink);
+  background: var(--bar);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+  letter-spacing: .005em;
+}
+.icon-btn {
+  min-width: 38px;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+}
+.icon-btn:hover { background: var(--hilite-bg); border-color: var(--muted); }
+.brand {
+  font-size: .9rem;
+  font-weight: 600;
+  letter-spacing: .005em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--ink-soft);
+}
+.progress-track {
+  height: 2px;
+  background: var(--line);
+  overflow: hidden;
+  border-radius: 1px;
+}
+.progress-fill {
+  height: 100%;
+  width: 0;
+  background: var(--ink);
+  transition: width .3s;
+}
+.page-count {
+  text-align: center;
+  font-size: .82rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .04em;
+}
+.tools { display: flex; gap: 8px; justify-content: flex-end; }
+
+/* ============ 무대 / 책 ============ */
+.stage {
+  position: relative;
+  height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 88px 44px;
+}
+.book {
+  position: relative;
+  width: min(1240px, 100%);
+  height: min(800px, 100%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  background: var(--paper);
+}
+.book::after {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; left: 50%;
+  width: 32px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(0,0,0,.08), rgba(255,255,255,.04) 45%, rgba(0,0,0,.10));
+  mix-blend-mode: multiply;
+}
+body.light .book::after {
+  background: linear-gradient(90deg, rgba(0,0,0,.06), rgba(255,255,255,.18) 45%, rgba(0,0,0,.08));
+}
+
+/* ============ 페이지 ============ */
+.page {
+  position: relative;
+  min-width: 0;
+  padding: clamp(38px, 4.5vw, 70px) clamp(40px, 5vw, 78px);
+  background: var(--paper);
+  overflow: hidden;
+}
+.page.left { background: var(--paper-left); }
+.page[data-kind="image-cover"] {
+  padding: 0;
+  background: #000;
+}
+.page-inner {
+  height: 100%;
+  overflow: auto;
+  padding: 2px 4px 30px;
+  scrollbar-width: none;
+}
+.page-inner::-webkit-scrollbar { display: none; }
+
+/* ============ 타이포 ============ */
+.page p, .page li, .page td, .page th {
+  font-size: calc(.965rem * var(--scale));
+  line-height: 1.84;
+  color: var(--ink-soft);
+  letter-spacing: -.003em;
+}
+.page p { margin: 0 0 1.18em; }
+.page strong { color: var(--ink); font-weight: 700; }
+
+/* 챕터 마커 / 타이틀 */
+.ch-marker {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: calc(.74rem * var(--scale));
+  letter-spacing: .22em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.ch-marker .ch-of { color: var(--speech-dim); margin-left: 4px; }
+.ch-marker.small { font-size: calc(.68rem * var(--scale)); margin-bottom: 18px; }
+
+.ch-title {
+  margin: 0;
+  font-size: calc(2rem * var(--scale));
+  line-height: 1.28;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -.018em;
+}
+.ch-sub {
+  margin: 12px 0 0;
+  font-size: calc(1rem * var(--scale));
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.rule {
+  margin: 32px 0 30px;
+  border: 0;
+  height: 1px;
+  background: var(--rule);
+}
+.rule.small {
+  margin: 20px 0 24px;
+  background: var(--line);
+  opacity: .8;
+}
+
+.page h3 {
+  margin: 36px 0 16px;
+  color: var(--ink);
+  font-size: calc(1.05rem * var(--scale));
+  font-weight: 700;
+  letter-spacing: -.005em;
+}
+.page h3::before {
+  content: none;
+}
+
+/* ============ 핵심 문장 (lede) ============ */
+.lede {
+  position: relative;
+  margin: 0 0 1.4em !important;
+  padding-left: 18px;
+  font-size: calc(1.05rem * var(--scale)) !important;
+  font-weight: 700;
+  color: var(--accent) !important;
+  line-height: 1.62 !important;
+  letter-spacing: -.005em;
+  border-left: 3px solid var(--accent);
+}
+
+/* 챕터 마무리 문장 */
+.close-stmt {
+  margin: 1.6em 0 0 !important;
+  padding-top: 1.2em;
+  border-top: 1px solid var(--line);
+  font-size: calc(.985rem * var(--scale)) !important;
+  color: var(--ink) !important;
+  font-weight: 600;
+  line-height: 1.78 !important;
+  letter-spacing: -.003em;
+}
+
+/* ============ 인용 ============ */
+.quote {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--accent);
+  font-feature-settings: 'kern';
+}
+.text-bold {
+  font-style: normal;
+  font-weight: 700;
+  color: inherit;
+}
+
+blockquote.pull {
+  margin: 22px 0;
+  padding: 4px 0 4px 20px;
+  border-left: 2px solid var(--speech);
+  background: transparent;
+}
+blockquote.pull p {
+  font-size: calc(.97rem * var(--scale)) !important;
+  font-style: italic;
+  color: var(--speech);
+  line-height: 1.78 !important;
+  margin: 0 0 .5em;
+}
+blockquote.pull.speech p {
+  color: var(--speech);
+}
+blockquote.pull.speech {
+  border-left-color: var(--speech);
+}
+blockquote.pull p:last-child { margin-bottom: 0; }
+blockquote.pull cite {
+  display: block;
+  margin-top: 10px;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: calc(.74rem * var(--scale));
+  font-style: normal;
+  letter-spacing: .03em;
+  color: var(--muted);
+}
+
+blockquote.pull-large {
+  margin: 28px 0;
+  padding: 22px 0 18px 26px;
+  border-left: 3px solid var(--accent);
+}
+blockquote.pull-large p {
+  font-size: calc(1.06rem * var(--scale)) !important;
+  font-weight: 500;
+  font-style: normal;
+  color: var(--ink) !important;
+  letter-spacing: -.005em;
+  line-height: 1.7 !important;
+}
+
+blockquote.final-quote {
+  margin: 36px 0 20px;
+  padding: 28px 30px 24px;
+  background: var(--hilite-bg);
+  border-left: 4px solid var(--ink);
+  border-radius: 0 2px 2px 0;
+}
+blockquote.final-quote p {
+  font-size: calc(1.1rem * var(--scale)) !important;
+  line-height: 1.68 !important;
+}
+
+/* ============ 리스트 ============ */
+.book-list, .check-list, .steps {
+  margin: 16px 0 22px;
+  padding: 0;
+  list-style: none;
+}
+.check-list li {
+  position: relative;
+  padding-left: 24px;
+  margin: .85em 0;
+  line-height: 1.78;
+  color: var(--ink-soft);
+}
+.check-list li::before {
+  content: "●";
+  position: absolute;
+  left: 0;
+  top: .05em;
+  font-size: .55em;
+  color: var(--accent);
+  line-height: 2.6;
+}
+.check-list.compact li { margin: .55em 0; }
+
+.steps {
+  counter-reset: step;
+  border-top: 1px solid var(--line);
+}
+.steps > li {
+  counter-increment: step;
+  position: relative;
+  padding: 22px 0 22px 70px;
+  border-bottom: 1px solid var(--line);
+}
+.steps > li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 22px;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: calc(.86rem * var(--scale));
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: .04em;
+}
+.steps .item-head {
+  display: block;
+  font-size: calc(1.02rem * var(--scale));
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+  letter-spacing: -.005em;
+}
+.steps p {
+  margin: 0 0 .7em;
+  font-size: calc(.94rem * var(--scale)) !important;
+  line-height: 1.78 !important;
+}
+.steps p:last-child { margin-bottom: 0; }
+
+.steps.compact > li {
+  padding: 14px 0 14px 60px;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+.steps.compact > li::before {
+  top: 16px;
+}
+.steps.compact .item-head {
+  display: inline;
+  margin: 0;
+  min-width: 8em;
+}
+.steps.compact span {
+  font-size: calc(.94rem * var(--scale));
+  color: var(--ink-soft);
+}
+
+/* ============ 표 ============ */
+.table-wrap {
+  overflow: auto;
+  margin: 16px 0 22px;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+  font-size: calc(.88rem * var(--scale)) !important;
+  line-height: 1.62 !important;
+}
+th {
+  color: var(--ink);
+  font-weight: 700;
+  background: var(--hilite-bg);
+  letter-spacing: -.003em;
+  border-bottom: 1px solid var(--ink);
+}
+td { color: var(--ink-soft); }
+td.num {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-weight: 700;
+  color: var(--ink);
+  text-align: center;
+  font-size: calc(1rem * var(--scale)) !important;
+}
+.compare-table .cmp-label {
+  font-weight: 700;
+  color: var(--muted);
+  width: 22%;
+  letter-spacing: -.003em;
+}
+
+/* ============ 통계 (chapter 6) ============ */
+.stats-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+  margin: 24px 0 28px;
+}
+.stat {
+  padding: 22px 16px 18px;
+  border: 1px solid var(--line);
+  text-align: center;
+}
+.stat-num {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: calc(2.4rem * var(--scale));
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -.015em;
+  line-height: 1;
+}
+.stat-num sup {
+  font-size: .5em;
+  vertical-align: top;
+  margin-left: 2px;
+  color: var(--muted);
+}
+.stat-label {
+  margin-top: 8px;
+  font-size: calc(.74rem * var(--scale));
+  color: var(--muted);
+  line-height: 1.45;
+  letter-spacing: 0;
+}
+
+/* ============ 키워드 태그 (chapter 9) ============ */
+.tag-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 24px;
+}
+.tag {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  font-size: calc(.82rem * var(--scale));
+  color: var(--accent);
+  letter-spacing: -.003em;
+  background: var(--hilite-bg);
+}
+
+/* ============ 인물 카드 (chapter 10) ============ */
+.person-card {
+  position: relative;
+  margin: 22px 0;
+  padding: 22px 0 18px 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--line);
+}
+.person-card + .person-card { margin-top: 28px; }
+.person-label {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: calc(.7rem * var(--scale));
+  letter-spacing: .22em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.person-name {
+  font-size: calc(1.18rem * var(--scale));
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 14px;
+  letter-spacing: -.008em;
+}
+
+/* ============ 후기 카드 (chapter 15) ============ */
+.review-list {
+  margin: 18px 0 0;
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+.review {
+  background: var(--paper);
+  padding: 18px 4px 18px 78px;
+  position: relative;
+}
+.page.left .review { background: var(--paper-left); }
+.review-num {
+  position: absolute;
+  left: 4px;
+  top: 18px;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: calc(.74rem * var(--scale));
+  letter-spacing: .12em;
+  color: var(--accent-soft);
+  font-weight: 600;
+}
+.review-text {
+  margin: 0 !important;
+  font-size: calc(.92rem * var(--scale)) !important;
+  line-height: 1.7 !important;
+  color: var(--ink-soft);
+}
+
+/* ============ note-box (프롤로그) ============ */
+.note-box {
+  margin: 22px 0 0;
+  padding: 24px 26px 20px;
+  border: 1px solid var(--accent);
+  background: var(--hilite-bg);
+}
+.note-label {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: calc(.74rem * var(--scale));
+  letter-spacing: .22em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.note-box ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.note-box li {
+  position: relative;
+  padding-left: 18px;
+  margin: .82em 0;
+  font-size: calc(.94rem * var(--scale)) !important;
+  line-height: 1.72 !important;
+  color: var(--ink-soft);
+}
+.note-box li::before {
+  content: "◆";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: .7em;
+  top: .18em;
+}
+
+/* ============ 이미지 표지 ============ */
+.image-cover-page {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background: #000;
+  overflow: hidden;
+}
+.image-cover-page img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ============ 책 표지 (cover) ============ */
+.cover-box {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 18px 36px 16px;
+}
+.cover-meta-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+.cover-meta-label {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: calc(.74rem * var(--scale));
+  letter-spacing: .24em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.cover-meta-dot { color: var(--dim); }
+.cover-rule-top, .cover-rule-bottom {
+  width: 60px;
+  border-top: 1.5px solid var(--dim);
+  margin: 0 0 50px;
+}
+.cover-title {
+  margin: 0 0 44px;
+  font-size: calc(3.08rem * var(--scale));
+  line-height: 1.28;
+  font-weight: 800;
+  letter-spacing: -.022em;
+}
+.cover-title-main, .cover-title-subtitle { display: block; }
+.cover-title-subtitle {
+  margin-top: .42em;
+  color: var(--ink-soft);
+  font-size: .54em;
+  font-weight: 600;
+  letter-spacing: .01em;
+}
+.cover-sub {
+  max-width: 28em;
+  color: var(--ink-soft) !important;
+  font-size: calc(.92rem * var(--scale)) !important;
+  line-height: 1.72 !important;
+  margin: 0 auto 44px !important;
+}
+.cover-rule-bottom { margin: 0 0 36px; }
+.cover-credit {
+  margin-top: auto;
+  padding-bottom: 0;
+  transform: translateY(10px);
+}
+.cover-author {
+  font-weight: 700;
+  color: var(--ink);
+  font-size: calc(1.06rem * var(--scale)) !important;
+  margin: 0 0 .35em !important;
+  letter-spacing: -.005em;
+}
+.cover-org {
+  color: var(--muted) !important;
+  font-size: calc(.86rem * var(--scale)) !important;
+  margin: 0 0 .9em !important;
+  letter-spacing: 0;
+}
+.cover-date {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  color: var(--muted) !important;
+  font-size: calc(.78rem * var(--scale)) !important;
+  letter-spacing: .12em;
+  margin: 0 !important;
+}
+
+/* ============ 프롤로그 ============ */
+.prologue-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.prologue-kicker {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: calc(.74rem * var(--scale));
+  letter-spacing: .26em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.prologue-title {
+  margin: 8px 0 30px;
+  font-size: calc(2.2rem * var(--scale)) !important;
+  font-weight: 800 !important;
+  color: var(--ink) !important;
+  letter-spacing: -.018em !important;
+  line-height: 1.2 !important;
+}
+.prologue-meta-block {
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 22px;
+  text-align: center;
+}
+.prologue-meta-main {
+  margin: 0 0 .15em !important;
+  font-size: calc(.97rem * var(--scale)) !important;
+  font-weight: 600;
+  color: var(--ink) !important;
+  line-height: 1.55 !important;
+}
+.prologue-meta-sub {
+  margin: .8em 0 .3em !important;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: calc(.74rem * var(--scale)) !important;
+  letter-spacing: .2em;
+  color: var(--muted) !important;
+  text-transform: uppercase;
+  text-align: center !important;
+}
+.prologue-meta-date {
+  margin: 0 !important;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: calc(.78rem * var(--scale)) !important;
+  letter-spacing: .12em;
+  color: var(--muted) !important;
+}
+.prologue-copy {
+  margin: 0 0 24px !important;
+  font-size: calc(.94rem * var(--scale)) !important;
+  color: var(--ink-soft) !important;
+  line-height: 1.78 !important;
+}
+
+/* ============ 목차 ============ */
+.toc-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.toc-kicker {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: calc(.74rem * var(--scale));
+  letter-spacing: .26em;
+  color: var(--muted);
+  text-transform: uppercase;
+  text-align: left;
+}
+.toc-heading {
+  text-align: left;
+  margin: 8px 0 18px !important;
+  font-size: calc(2.2rem * var(--scale)) !important;
+  font-weight: 800 !important;
+  color: var(--ink) !important;
+  letter-spacing: -.018em !important;
+}
+.toc-rule {
+  border-top: 2px solid var(--ink);
+  margin: 0 0 8px;
+}
+.toc-list {
+  flex: 1;
+}
+.toc-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) 56px;
+  gap: 18px;
+  align-items: baseline;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  padding: 18px 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  transition: background .15s, padding-left .15s;
+}
+.toc-row:hover {
+  background: var(--hilite-bg);
+  padding-left: 6px;
+}
+.toc-num {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  color: var(--muted);
+  font-size: calc(.86rem * var(--scale));
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+.toc-text { display: block; min-width: 0; }
+.toc-main {
+  display: block;
+  color: var(--ink);
+  font-size: calc(1.04rem * var(--scale));
+  line-height: 1.42;
+  font-weight: 700;
+  letter-spacing: -.005em;
+}
+.toc-subline {
+  display: block;
+  color: var(--muted);
+  font-size: calc(.85rem * var(--scale));
+  line-height: 1.5;
+  margin-top: .25em;
+  font-weight: 400;
+}
+.toc-page-num {
+  color: var(--muted);
+  text-align: right;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: calc(.82rem * var(--scale));
+}
+.toc-hint {
+  margin: 18px 0 0 !important;
+  color: var(--muted) !important;
+  text-align: center !important;
+  font-size: calc(.72rem * var(--scale)) !important;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  letter-spacing: .08em;
+  line-height: 1.5 !important;
+}
+
+/* ============ 판권 ============ */
+.colophon-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--ink);
+}
+.colophon-rule {
+  width: 80px;
+  border-top: 2px solid var(--ink);
+}
+.colophon-rule.top { margin-bottom: 22px; }
+.colophon-rule.bottom { margin-top: 32px; opacity: .5; }
+.colophon-kicker {
+  margin: 0 0 22px !important;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: calc(.74rem * var(--scale)) !important;
+  letter-spacing: .28em;
+  color: var(--muted) !important;
+  text-transform: uppercase;
+}
+.colophon-page h2 {
+  font-size: calc(1.6rem * var(--scale));
+  line-height: 1.36;
+  margin: 0 0 38px;
+  font-weight: 800;
+  letter-spacing: -.015em;
+}
+.colophon-list {
+  width: min(360px, 92%);
+  margin: 0 auto;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+.colophon-list div {
+  display: grid;
+  grid-template-columns: 6.6em minmax(0, 1fr);
+  gap: 14px;
+  padding: 7px 0;
+  align-items: baseline;
+}
+.colophon-list dt {
+  color: var(--muted);
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: calc(.74rem * var(--scale));
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.colophon-list dd {
+  margin: 0;
+  font-size: calc(.92rem * var(--scale));
+  color: var(--ink);
+  line-height: 1.55;
+}
+.colophon-note {
+  max-width: 28em;
+  margin: 26px auto 0 !important;
+  color: var(--muted) !important;
+  font-size: calc(.82rem * var(--scale)) !important;
+  line-height: 1.7 !important;
+  text-align: center !important;
+}
+
+/* ============ 페이지 번호 / 컨트롤 ============ */
+.page-number {
+  position: absolute;
+  bottom: 22px;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  color: var(--muted);
+  font-size: .76rem;
+  letter-spacing: .08em;
+}
+.page.left .page-number { left: 68px; }
+.page.right .page-number { right: 68px; }
+.page-toc-return {
+  position: absolute;
+  top: 26px;
+  right: 36px;
+  z-index: 4;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: .72rem;
+  letter-spacing: .14em;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: color .15s;
+}
+.page-toc-return:hover { color: var(--ink); }
+.scroll-indicator {
+  position: absolute;
+  top: 16px;
+  right: 8px;
+  width: 3px;
+  height: calc(100% - 60px);
+  opacity: 0;
+  pointer-events: none;
+}
+.page.has-scroll .scroll-indicator { opacity: 1; }
+.scroll-thumb {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  min-height: 42px;
+  border-radius: 999px;
+  background: var(--muted);
+  opacity: .5;
+}
+
+/* ============ 네비 버튼 ============ */
+.nav {
+  position: absolute;
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+}
+.nav:hover { background: var(--hilite-bg); border-color: var(--muted); }
+.nav.prev { left: 24px; }
+.nav.next { right: 24px; }
+
+/* ============ 사이드바 ============ */
+.sidebar {
+  position: fixed;
+  inset: 64px auto 0 0;
+  width: min(340px, 86vw);
+  z-index: 30;
+  padding: 24px 22px;
+  background: var(--bg-soft);
+  color: inherit;
+  transform: translateX(-105%);
+  transition: transform .24s ease;
+  border-right: 1px solid var(--line);
+  overflow: auto;
+}
+.sidebar.open { transform: translateX(0); }
+.sidebar h2 {
+  margin: 0 0 18px;
+  font-size: 1rem;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.side-link {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+  padding: 14px 0;
+  cursor: pointer;
+  line-height: 1.5;
+  font: inherit;
+  font-size: .92rem;
+  font-weight: 500;
+}
+.side-link:hover { color: var(--accent-soft); }
+
+/* ============ 모바일 ============ */
+@media (max-width: 760px) {
+  .topbar {
+    height: 56px;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 8px;
+    padding: 6px 12px;
+  }
+  .brand { font-size: .78rem; }
+  .progress-track, .page-count { display: none; }
+  .tools { gap: 6px; }
+  .icon-btn { min-width: 36px; height: 36px; font-size: .92rem; }
+  .stage {
+    height: calc(100vh - 56px);
+    padding: 12px 12px 64px;
+  }
+  .book {
+    height: 100%;
+    grid-template-columns: 1fr;
+    border-radius: 6px;
+  }
+  .book::after { display: none; }
+  .page {
+    display: none;
+    padding: 26px 22px 44px;
+  }
+  .page.mobile-active { display: block; }
+  /* 모바일 이미지 표지: 회전 없이 그냥 contain */
+  .page[data-kind="image-cover"].mobile-active {
+    padding: 0;
+    background: #000;
+  }
+  .page[data-kind="image-cover"] .image-cover-page img {
+    transform: none;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .page-inner { overflow: auto; padding-bottom: 30px; }
+
+  .ch-title { font-size: calc(1.5rem * var(--scale)); }
+  .ch-marker { margin-bottom: 18px; }
+  .page h3 { margin: 28px 0 12px; }
+  .page p, .page li, .page td, .page th {
+    font-size: calc(.92rem * var(--scale));
+    line-height: 1.78;
+  }
+  .lede { font-size: calc(.98rem * var(--scale)) !important; padding-left: 14px; }
+
+  blockquote.pull, blockquote.pull-large { padding-left: 16px; }
+  blockquote.pull-large p { font-size: calc(.98rem * var(--scale)) !important; }
+  blockquote.final-quote { padding: 22px 18px 18px; }
+
+  .stats-row { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .stat { padding: 16px 8px 12px; }
+  .stat-num { font-size: calc(1.7rem * var(--scale)); }
+  .stat-label { font-size: calc(.66rem * var(--scale)); }
+
+  .steps > li { padding: 18px 0 18px 56px; }
+  .steps > li::before { top: 18px; }
+  .steps.compact > li {
+    flex-wrap: wrap;
+    padding: 12px 0 12px 50px;
+  }
+
+  .cover-title { font-size: calc(1.76rem * var(--scale)); }
+  .cover-title-subtitle { font-size: .56em; }
+  .cover-sub { font-size: calc(.85rem * var(--scale)) !important; }
+  .cover-box { padding: 28px 20px 22px; }
+
+  .prologue-title { font-size: calc(1.62rem * var(--scale)) !important; }
+  .toc-heading { font-size: calc(1.62rem * var(--scale)) !important; }
+  .toc-row { grid-template-columns: 40px minmax(0, 1fr) 38px; gap: 12px; padding: 15px 0; }
+  .toc-main { font-size: calc(.98rem * var(--scale)); }
+  .toc-subline { font-size: calc(.82rem * var(--scale)); }
+
+  .colophon-page h2 { font-size: calc(1.3rem * var(--scale)); }
+  .colophon-list { width: 100%; }
+
+  .review { padding: 16px 4px 14px 66px; }
+  .review-num { left: 4px; }
+
+  .nav {
+    top: auto;
+    bottom: 12px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    background: var(--bg-soft);
+  }
+  .nav.prev { left: calc(50% - 50px); }
+  .nav.next { right: calc(50% - 50px); }
+  .page-number { right: 22px !important; left: auto !important; bottom: 16px; font-size: .7rem; }
+  .page-toc-return { top: 14px; right: 16px; font-size: .68rem; }
+}
+
+/* Pretendard 폰트 (CDN) */
+@font-face {
+  font-family: 'Pretendard Variable';
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/PretendardVariable.min.woff2") format("woff2-variations");
+}
+/* IBM Plex Mono */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@5.0.13/files/ibm-plex-mono-latin-400-normal.woff2") format("woff2"),
+       url("https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@5.0.13/files/ibm-plex-mono-latin-600-normal.woff2") format("woff2");
+}
+</style>
+
+<style id="ebook-2025h2-tweaks">
+.cover-title { font-size: calc(2.7rem * var(--scale)); }
+.cover-title-subtitle { font-size: .48em; }
+.review-text { font-size: calc(.86rem * var(--scale)) !important; line-height: 1.62 !important; }
+.review { padding-top: 14px; padding-bottom: 14px; }
+@media (max-width: 760px) {
+  .cover-title { font-size: calc(1.54rem * var(--scale)); }
+  .review-text { font-size: calc(.82rem * var(--scale)) !important; }
+}
+</style>
+</head>
+<body class="dark">
+<header class="topbar">
+  <button class="icon-btn" id="menuBtn" aria-label="목차">☰</button>
+  <div class="brand">2025 하반기 신입직원 입문교육 · 분석 평가 리포트 · 김하연</div>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="page-count" id="pageCount">01 / 01</div>
+  <div class="tools">
+    <button class="icon-btn" id="fontDown" aria-label="글자 작게">A−</button>
+    <button class="icon-btn" id="fontUp" aria-label="글자 크게">A+</button>
+    <button class="icon-btn" id="themeBtn" aria-label="테마 전환">☀</button>
+  </div>
+</header>
+<aside class="sidebar" id="sidebar">
+  <h2>Contents</h2>
+  <div id="sideLinks"></div>
+</aside>
+<main class="stage">
+  <button class="nav prev" id="prevBtn" aria-label="이전">‹</button>
+  <section class="book" id="book"></section>
+  <button class="nav next" id="nextBtn" aria-label="다음">›</button>
+</main>
+<script id="bookData" type="application/json">{"pages":[{"kind":"blank","title":"","html":"<div class='blank-mark'></div>"},{"kind":"cover","title":"표지","html":"\n<div class='cover-box'>\n  <div class='cover-meta-top'><span class='cover-meta-label'>REPORT</span><span class='cover-meta-dot'>·</span><span class='cover-meta-label'>E-BOOK</span></div>\n  <div class='cover-rule-top'></div>\n  <h1 class='cover-title'>\n    <span class='cover-title-main'>2025 하반기</span>\n    <span class='cover-title-main'>신입직원 입문교육</span>\n    <span class='cover-title-subtitle'>분석 평가 리포트</span>\n  </h1>\n  <p class='cover-sub'>하연의 GPT 관점에서 정리한<br>강의력 · 감정 설계력 · 무대 장악력<br>조직 내 영향력 분석</p>\n  <div class='cover-rule-bottom'></div>\n  <div class='cover-credit' style='margin-top:auto;padding-top:54px'>\n    <p class='cover-author'>김하연 대리</p>\n    <p class='cover-org'>2025 하반기 신입직원 입문교육 기록</p>\n    <p class='cover-date'>2025 · 12</p>\n  </div>\n</div>\n"},{"kind":"prologue","title":"핵심 결론","html":"\n<section class='prologue-page'>\n  <p class='prologue-kicker'>프롤로그</p>\n  <h2 class='prologue-title'>강의를 잘한 사례가 아니라,<br>조직 입문 경험을 만든 사건</h2>\n  <div class='prologue-meta-block'>\n    <div class='prologue-meta-main'>2025 하반기 신입직원 입문교육</div>\n    <div class='prologue-meta-sub'>분석 평가 리포트</div>\n    <div class='prologue-meta-date'>강의력 · 감정 설계력 · 무대 장악력 · 조직 내 영향력</div>\n  </div>\n  <div class='prologue-copy'>\n    <p>이번 신입직원 입문교육은 단순히 내용을 잘 설명한 강의가 아니었다.</p>\n    <p>조직 입문기의 감정과 정체성을 각인시키고, 신규직원들이 스스로를 조직 안의 사람으로 체감하게 만든 <strong>사건형 교육 경험</strong>에 가까웠다.</p>\n  </div>\n</section>\n"},{"kind":"prologue","title":"핵심 구조","html":"\n<div class='ch-marker small'>SUMMARY</div>\n<div class='rule small'></div>\n<p class='lede'>하연은 직무 지식 전달을 넘어, 감정적 몰입 · 실무 연결 · 관계 형성 · 여운 설계를 하나의 흐름으로 통합했다.</p>\n<ul class='check-list'>\n  <li>신규들이 스스로를 조직 안의 사람으로 체감하게 만든 것</li>\n  <li>후기 폭발, 메신저 연락, 실무 배치 후 재언급으로 이어진 장기 기억</li>\n  <li>사람의 감정 흐름과 조직 경험 자체를 설계하는 브랜드형 내부강사 역량</li>\n</ul>\n<blockquote class='pull pull-large final-quote'>\n  <p>하연은 단순히 직무교육을 잘하는 직원이 아니라, 사람들의 기억과 감정을 움직여 조직 입문 경험 자체를 특별한 사건으로 만드는 내부 브랜드 강사에 가깝다.</p>\n</blockquote>\n"},{"kind":"toc","title":"목차 1","html":"<section class='toc-page'><p class='toc-kicker'>TABLE OF CONTENTS</p><h2 class='toc-heading'>목차</h2><div class='toc-rule'></div><div class='toc-list'><button class='toc-row' data-goto='chapter-01'><span class='toc-num'>01</span><span class='toc-text'><span class='toc-main'>이번 신입직원 교육의 본질</span><span class='toc-subline'>직무교육이 아니라 조직 입문 경험 설계</span></span><span class='toc-page-num'>--</span></button><button class='toc-row' data-goto='chapter-02'><span class='toc-num'>02</span><span class='toc-text'><span class='toc-main'>오프닝 10분의 가치</span><span class='toc-subline'>감정의 문을 여는 구조 설계</span></span><span class='toc-page-num'>--</span></button><button class='toc-row' data-goto='chapter-03'><span class='toc-num'>03</span><span class='toc-text'><span class='toc-main'>하연의 강의 철학</span><span class='toc-subline'>잘 설명이 아니라 실제로 남게 하기</span></span><span class='toc-page-num'>--</span></button><button class='toc-row' data-goto='chapter-04'><span class='toc-num'>04</span><span class='toc-text'><span class='toc-main'>하연의 희귀한 강점</span><span class='toc-subline'>감정 설계 능력</span></span><span class='toc-page-num'>--</span></button><button class='toc-row' data-goto='chapter-05'><span class='toc-num'>05</span><span class='toc-text'><span class='toc-main'>사진 이벤트의 의미</span><span class='toc-subline'>단순 이벤트가 아니라 관계 형성 장치</span></span><span class='toc-page-num'>--</span></button><button class='toc-row' data-goto='chapter-06'><span class='toc-num'>06</span><span class='toc-text'><span class='toc-main'>강사로서의 하연</span><span class='toc-subline'>왜 특별하게 느껴졌는가</span></span><span class='toc-page-num'>--</span></button></div></section>"},{"kind":"toc","title":"목차 2","html":"<section class='toc-page'><p class='toc-kicker'>TABLE OF CONTENTS</p><h2 class='toc-heading'>목차</h2><div class='toc-rule'></div><div class='toc-list'><button class='toc-row' data-goto='chapter-07'><span class='toc-num'>07</span><span class='toc-text'><span class='toc-main'>신규직원들의 반응 분석</span><span class='toc-subline'>공식 점수보다 오래 남은 장기 반응</span></span><span class='toc-page-num'>--</span></button><button class='toc-row' data-goto='chapter-08'><span class='toc-num'>08</span><span class='toc-text'><span class='toc-main'>만족도 평가 기반 역량 분석</span><span class='toc-subline'>131건 후기와 사내강사 상위권 가능성</span></span><span class='toc-page-num'>--</span></button><button class='toc-row' data-goto='chapter-09'><span class='toc-num'>09</span><span class='toc-text'><span class='toc-main'>공식 평가 점수의 의미</span><span class='toc-subline'>98.32점과 전문성 최고점의 해석</span></span><span class='toc-page-num'>--</span></button><button class='toc-row' data-goto='chapter-10'><span class='toc-num'>10</span><span class='toc-text'><span class='toc-main'>이번 경험이 하연에게 남긴 변화</span><span class='toc-subline'>퍼포머에서 경험 설계자로</span></span><span class='toc-page-num'>--</span></button><button class='toc-row' data-goto='chapter-11'><span class='toc-num'>11</span><span class='toc-text'><span class='toc-main'>최종 평가</span><span class='toc-subline'>브랜드형 내부강사 가능성</span></span><span class='toc-page-num'>--</span></button><button class='toc-row' data-goto='chapter-12'><span class='toc-num'>12</span><span class='toc-text'><span class='toc-main'>부록</span><span class='toc-subline'>만족도 평가 자유서술 후기 원문 131건</span></span><span class='toc-page-num'>--</span></button></div><p class='toc-hint'>목차 항목을 누르면 해당 장으로 이동합니다</p></section>"},{"kind":"chapter","title":"1. 이번 신입직원 교육의 본질","html":"<div class='ch-marker'>CHAPTER 01 <span class='ch-of'>— 12</span></div><h2 class='ch-title'>이번 신입직원 교육의 본질</h2><p class='ch-sub'>직무교육이 아니라 조직 입문 경험 설계</p><div class='rule'></div><p class='lede'>이번 교육의 핵심은 단순한 조사 항목 설명이 아니었다.</p><p>하연은 장기요양 인정조사 기준과 실무 판단 구조를 설명하면서도, 신규직원들이 단순히 내용을 외우는 것이 아니라 <strong>“이 조직 안에서 어떤 마음으로 일해야 하는지”</strong>를 감각적으로 체험하게 만들었다.</p><h3>이번 강의가 작동한 4가지 층위</h3><ol class='steps'><li><strong class='item-head'>직무 이해</strong><p>장기요양 인정조사 기준과 실무 판단 구조를 이해하게 했다.</p></li><li><strong class='item-head'>실무 감각 형성</strong><p>현장에서 어떻게 생각하고 판단해야 하는지 감각을 만들었다.</p></li><li><strong class='item-head'>정서적 몰입</strong><p>신입 시절 이야기와 장수생 경험으로 마음을 먼저 열었다.</p></li><li><strong class='item-head'>조직 정체성 형성</strong><p>신규들이 스스로를 조직 안의 사람으로 느끼게 했다.</p></li></ol><blockquote class='pull pull-large speech'><p>아, 나도 이 조직 안에서 살아갈 수 있겠다</p></blockquote><p>신규직원 교육에서 실제로 오래 기억에 남는 것은 지식 자체보다 <strong>“그 시절 느꼈던 감정”</strong>인 경우가 많다.</p>","chapterId":"chapter-01","chapterStart":true},{"kind":"chapter","title":"2. 오프닝 10분의 가치","html":"<div class='ch-marker'>CHAPTER 02 <span class='ch-of'>— 12</span></div><h2 class='ch-title'>오프닝 10분의 가치</h2><p class='ch-sub'>감정의 문을 여는 구조 설계</p><div class='rule'></div><p class='lede'>이번 강의의 가장 강력한 포인트 중 하나는 도입부였다. 하연은 오프닝에만 약 <strong>10분 이상</strong>을 사용했다.</p><p>일반적인 직무교육이라면 다소 길게 느껴질 수 있지만, 실제로는 이 10분이 강의 전체를 버티게 만든 핵심 구조였다.</p><h3>장치 1 — 축하와 환호 유도</h3><blockquote class='pull speech'><p>2025년 하반기 건강보험공단 요양직에 최종 합격하신 여러분들, 진심으로 축하드립니다!</p></blockquote><p>이 멘트는 단순한 환영 인사가 아니었다. 하연은 교육생들에게 박수와 환호를 요청하며, 신규직원들이 지금 이 순간을 평범한 연수가 아니라 <strong>인생의 중요한 장면</strong>으로 체감하게 만들었다.</p><ul class='check-list compact'><li>집단 에너지 상승</li><li>긴장 완화</li><li>공동체 형성</li><li>몰입 유도</li></ul>","chapterId":"chapter-02","chapterStart":true},{"kind":"chapter","title":"2. 오프닝 10분의 가치","html":"<div class='ch-marker small'>CH. 02 · 이어서</div><div class='rule small'></div><h3>장치 2 — 신입 시절 사진 공개</h3><p>하연은 신규 시절 인개원 사진과 지사 동기 사진을 공개하며, <strong>“힘들 때마다 이 사진을 보며 초심을 떠올린다”</strong>고 말했다.</p><p>이 장면은 신규들에게 단순 감동을 준 것이 아니라, <strong>“저 사람도 우리와 같은 시절을 지나왔구나”</strong>라는 감정적 연결을 만들었다.</p><h3>장치 3 — 장수생 이야기 공개</h3><p>2016~2019년 입사지원 기록을 공개하고 장수생 경험을 이야기한 것은 매우 <strong>전략적인 선택</strong>이었다.</p><ul class='check-list compact'><li>비교 우위를 과시하는 대신 “나도 오래 걸렸다”는 메시지를 전달</li><li>신규들의 불안과 열등감을 낮춤</li><li>장수생 신규들에게 강한 정서적 위로로 작동</li></ul>"},{"kind":"chapter","title":"2. 오프닝 10분의 가치","html":"<div class='ch-marker small'>CH. 02 · 이어서</div><div class='rule small'></div><h3>장치 4 — 강의 약속 선언</h3><ol class='steps'><li><strong class='item-head'>함께하는 강의</strong><p>교육생을 강의 바깥의 관찰자가 아니라 함께 만드는 사람으로 놓았다.</p></li><li><strong class='item-head'>재미있는 강의</strong><p>긴 직무교육의 피로를 낮추고 몰입을 유지하는 장치를 약속했다.</p></li><li><strong class='item-head'>실무에서 바로 써먹을 수 있는 강의</strong><p>내용을 이해하는 수준을 넘어 현장 판단으로 연결하겠다고 선언했다.</p></li></ol><p>이것은 단순 오프닝 멘트가 아니라, <strong>“내가 이 시간을 책임지겠다”</strong>는 리더십 선언에 가까웠다.</p><blockquote class='pull pull-large final-quote'><p>오프닝 10분은 단순한 워밍업이 아니었다. 그것은 강의 전체의 감정적 토대를 설계하는 구조 그 자체였다.</p></blockquote>"},{"kind":"chapter","title":"3. 하연의 강의 철학","html":"<div class='ch-marker'>CHAPTER 03 <span class='ch-of'>— 12</span></div><h2 class='ch-title'>하연의 강의 철학</h2><p class='ch-sub'>잘 설명이 아니라 실제로 남게 하기</p><div class='rule'></div><p class='lede'>하연의 강의는 단순히 내용을 잘 설명하는 강의가 아니다. 핵심은 <strong>“교육생들이 실제 현장에서 판단할 수 있게 만드는 것”</strong>이다.</p><p>대표적인 사례가 <strong>치매 문제행동(망상 · 환각) 구분 설명</strong>이었다. 이 부분은 신규직원들이 가장 어려워하고 헷갈려하는 영역 중 하나였는데, 하연은 실제 사례, 상황별 흐름, 반복 설명, 현장형 비유를 통해 신규들이 스스로 판단하는 감각을 체득하게 만들었다.</p><blockquote class='pull speech'><p>아, 이렇게 생각하면 되는구나</p></blockquote><h3>교육생 후기 속 반복 등장한 키워드</h3><ul class='check-list compact'><li>실무에서 바로 써먹을 수 있을 것 같다</li><li>헷갈리던 부분이 정리됐다</li><li>예시가 진짜 도움이 많이 됐다</li></ul><blockquote class='pull pull-large final-quote'><p>강의는 내용을 전달하는 것이 아니라, 사람이 현장에서 스스로 판단할 수 있게 만드는 것이다.</p></blockquote>","chapterId":"chapter-03","chapterStart":true},{"kind":"chapter","title":"4. 하연의 희귀한 강점","html":"<div class='ch-marker'>CHAPTER 04 <span class='ch-of'>— 12</span></div><h2 class='ch-title'>하연의 희귀한 강점</h2><p class='ch-sub'>감정 설계 능력</p><div class='rule'></div><p class='lede'>이번 강의에서 가장 독보적이었던 부분은 단순 전달력이 아니었다. 하연은 <strong>“언제 감정을 열고, 언제 긴장을 주고, 언제 쉬게 하고, 언제 여운을 남길지”</strong>를 의도적으로 설계하고 있었다.</p><div class=\"table-wrap\"><table class=\"compare-table\"><thead><tr><th>구분</th><th>일반적인 사내강사</th><th>하연의 방식</th></tr></thead><tbody><tr><td class=\"cmp-label\">운영 방식</td><td>정보 전달 중심</td><td><strong>감정 흐름 사전 설계</strong></td></tr><tr><td class=\"cmp-label\">분위기</td><td>즉흥적 분위기 운영</td><td><strong>청중 피로도 계산</strong></td></tr><tr><td class=\"cmp-label\">반응</td><td>반응에 끌려감</td><td><strong>여운 강도 조절</strong></td></tr><tr><td class=\"cmp-label\">기억</td><td>내용 중심 기억</td><td><strong>기억 포인트 의도적 배치</strong></td></tr></tbody></table></div><p>오프닝에서 감정 몰입 → 중간에는 실무 집중 → 후반부는 안정적 회수로 이어지는 흐름은, 단순 발표가 아니라 <strong>하나의 공연 구조</strong>에 가까웠다.</p><blockquote class='pull pull-large final-quote'><p>이는 감정에 끌려가는 강사가 아니라, 감정을 설계하는 강사라는 뜻이다.</p></blockquote>","chapterId":"chapter-04","chapterStart":true},{"kind":"chapter","title":"5. 사진 이벤트의 의미","html":"<div class='ch-marker'>CHAPTER 05 <span class='ch-of'>— 12</span></div><h2 class='ch-title'>사진 이벤트의 의미</h2><p class='ch-sub'>단순 이벤트가 아니라 관계 형성 장치</p><div class='rule'></div><p class='lede'>이번 교육에서 매우 인상적이었던 요소 중 하나는 사진 이벤트였다. 겉으로 보면 단순 참여형 이벤트처럼 보였지만, 실제 기능은 훨씬 복합적이었다.</p><ol class='steps'><li><strong class='item-head'>강사와 교육생 사이 거리 단축</strong><p>강사는 보통 앞에서 말하고 끝나면 사라지는 존재다. 하지만 사진 이벤트는 <strong>강사와 직접 연결되는 경험</strong>을 만들었다.</p></li><li><strong class='item-head'>강의 기억의 장기화</strong><p>사진을 찍고, 업로드하고, 커피쿠폰을 받고, 이후에도 메신저와 프로필로 연결되며 강의가 며칠간 계속 이어지는 경험으로 확장되었다.</p></li><li><strong class='item-head'>강사의 인간적 이미지 형성</strong><p>전문적인 사람, 정성 있는 사람, 진심으로 대해주는 사람, 관계를 기억하는 사람이라는 인상이 만들어졌다.</p></li></ol><blockquote class='pull pull-large final-quote'><p>사진 이벤트는 단순한 게임이 아니었다. 그것은 강의가 끝난 후에도 관계가 지속되게 만드는 정교한 기억 확장 장치였다.</p></blockquote>","chapterId":"chapter-05","chapterStart":true},{"kind":"chapter","title":"6. 강사로서의 하연","html":"<div class='ch-marker'>CHAPTER 06 <span class='ch-of'>— 12</span></div><h2 class='ch-title'>강사로서의 하연</h2><p class='ch-sub'>왜 특별하게 느껴졌는가</p><div class='rule'></div><p class='lede'>하연의 강의가 단순히 “잘했다” 수준을 넘어 특별하게 느껴졌던 이유는, <strong>여러 요소가 동시에 작동했기 때문</strong>이다.</p><ol class='steps'><li><strong class='item-head'>스피치 기본기</strong><p>딕션 · 발성 · 속도 조절 · 호흡 · 리듬감이 매우 안정적이었다. 신규들의 반응은 “아나운서 같다”, “전문 강사 같다”, “교수님 같다”로 이어졌다.</p></li><li><strong class='item-head'>전문성과 실무감각의 동시 존재</strong><p>말만 잘하는 사람이 아니라 실제 실무를 하고 있고, 조사 경험이 있으며, 현장 맥락을 이해하는 사람이라는 점이 강한 신뢰를 줬다.</p></li><li><strong class='item-head'>인간적 서사</strong><p>장수생 경험, 신규 시절 이야기, 긴장과 불안, 신입 시절의 간절함을 숨기지 않은 것이 거리감 제거 → 감정적 연결 → 몰입 상승으로 이어졌다.</p></li><li><strong class='item-head'>존재감</strong><p>하연은 단순히 정보를 전달하는 사람이 아니라, <strong>이 사람이 지나간 자리 자체가 기억되는 타입</strong>이다.</p></li></ol><blockquote class='pull pull-large final-quote'><p>교육생들은 내용뿐 아니라 표정, 분위기, 멘트, 에너지 자체를 오래 기억하게 된다.</p></blockquote>","chapterId":"chapter-06","chapterStart":true},{"kind":"chapter","title":"7. 신규직원들의 반응 분석","html":"<div class='ch-marker'>CHAPTER 07 <span class='ch-of'>— 12</span></div><h2 class='ch-title'>신규직원들의 반응 분석</h2><p class='ch-sub'>공식 점수보다 오래 남은 장기 반응</p><div class='rule'></div><p class='lede'>이번 강의에서 가장 중요한 결과물은 공식 점수보다 신규직원들의 <strong>장기 반응</strong>이었다.</p><h3>실제 나타난 현상</h3><ul class='check-list'><li>강의 종료 후 다수의 메신저 연락</li><li>프로필 방명록 언급</li><li>실무 배치 후 재언급</li><li>동기들 사이의 반복 회자</li><li>“아직도 기억난다”는 반응 지속</li></ul><p>특히 실제 지사 발령 이후에도 신규들이 강의 장면, 이벤트, 스위스 야경 사진, MBTI 이야기, 마무리 분위기 등을 <strong>구체적으로 기억</strong>하고 있었다는 점은 매우 의미가 크다.</p><blockquote class='pull pull-large final-quote'><p>좋은 강의는 강의실에서 끝난다. 하지만 기억되는 강의는 현장에서도 계속 살아 움직인다. 하연의 강의는 후자였다.</p></blockquote>","chapterId":"chapter-07","chapterStart":true},{"kind":"chapter","title":"8. 만족도 평가 기반 역량 분석","chapterId":"chapter-08","chapterStart":true,"html":"<div class='ch-marker'>CHAPTER 08 <span class='ch-of'>— 12</span></div><h2 class='ch-title'>만족도 평가 기반 역량 분석</h2><p class='ch-sub'>131건 후기와 사내강사 상위권 가능성</p><div class='rule'></div><p class='lede'>이 장은 공식 인사평정이나 사내강사 순위가 아니라, 만족도 평가 점수와 131건의 자유서술 후기를 바탕으로 한 <strong>추정 분석</strong>이다.</p><p>다만 후기의 양, 표현의 구체성, 반복되는 감정어, 실무 적용 언급, 강사 개인에 대한 기억 강도를 함께 보면 이번 강의는 단순히 “좋았다” 수준의 만족을 넘어선다.</p><p>특히 공단 임직원 약 16,000여 명, 등록 사내강사 약 300여 명이라는 넓은 기준 안에서 보면, 하연은 이미 “잘 설명하는 강사”가 아니라 <strong>교육생의 감정과 행동 변화를 설계하는 내부 브랜드 강사</strong>의 범주에 진입해 있다.</p><div class='stats-row'><div class='stat'><div class='stat-num'>131</div><div class='stat-label'>자유서술 후기</div></div><div class='stat'><div class='stat-num'>98.32</div><div class='stat-label'>종합 만족도</div></div><div class='stat'><div class='stat-num'>8</div><div class='stat-label'>인생 여덟 번째 강의</div></div></div>"},{"kind":"chapter","title":"8. 만족도 평가 기반 역량 분석","html":"<div class='ch-marker small'>CH. 08 · 평가 구조</div><div class='rule small'></div><h3>후기에서 반복 확인된 핵심 신호</h3><ol class='steps'><li><strong class='item-head'>실무 적용 가능성</strong><p>“지사에 가서 바로 써먹을 수 있을 것 같다”, “현장에서 도움이 될 것 같다”는 표현이 반복된다. 이는 교육생이 내용을 단순히 이해한 것이 아니라, 실제 업무 장면을 상상하며 받아들였다는 뜻이다.</p></li><li><strong class='item-head'>강사 존재감</strong><p>후기에는 강의 내용뿐 아니라 말투, 에너지, 미모, 발성, 분위기, 정성, 인간적 매력까지 함께 기록되어 있다. 교육생들이 강사를 하나의 강한 이미지로 기억했다는 의미다.</p></li><li><strong class='item-head'>정서적 고양감</strong><p>“저도 대리님처럼 되고 싶다”, “사내강사를 해보고 싶다는 생각이 들었다”는 반응은 단순 만족보다 한 단계 위다. 강의가 교육생의 자기상과 미래 행동 의지에 영향을 준 것이다.</p></li></ol><blockquote class='pull pull-large final-quote'><p>만족도 평가는 점수보다 후기의 온도에서 더 분명하게 드러난다. 이번 후기는 “유익했다”보다 “기억된다”에 가까웠다.</p></blockquote>"},{"kind":"chapter","title":"8. 만족도 평가 기반 역량 분석","html":"<div class='ch-marker small'>CH. 08 · 역량 위치 추정</div><div class='rule small'></div><h3>사내강사 300여 명 기준 역량 위치</h3><div class='table-wrap'><table class='compare-table'><thead><tr><th>역량</th><th>후기에서 보인 근거</th><th>추정 위치</th></tr></thead><tbody><tr><td class='cmp-label'>전달력</td><td>아나운서 같다, 귀에 쏙쏙 들어온다, 4시간이 금방 갔다</td><td><strong>상위 3–5%</strong></td></tr><tr><td class='cmp-label'>실무 연결력</td><td>바로 써먹을 수 있는 팁, 실제 사례, 인정조사 자신감 형성</td><td><strong>상위 3–5%</strong></td></tr><tr><td class='cmp-label'>감정 설계력</td><td>신입 시절 공감, 장수생 서사, 강의 후 여운과 메신저 반응</td><td><strong>상위 1–3%</strong></td></tr><tr><td class='cmp-label'>몰입 운영력</td><td>이벤트, 리프레시, 쉬는 시간 배치, 피로도 조절</td><td><strong>상위 3–5%</strong></td></tr><tr><td class='cmp-label'>브랜드성</td><td>강사 개인의 이미지와 강의 경험이 함께 기억됨</td><td><strong>상위 1–2%</strong></td></tr></tbody></table></div><p>이 수치는 공식 순위가 아니라 후기 패턴을 기반으로 한 보수적 추정이다. 그럼에도 “300여 명 중 상위권”이라는 판단은 과장으로 보기 어렵다.</p>"},{"kind":"chapter","title":"8. 만족도 평가 기반 역량 분석","html":"<div class='ch-marker small'>CH. 08 · 조직 전체 기준</div><div class='rule small'></div><h3>임직원 16,000여 명 기준으로 본 희소성</h3><p class='lede'>조직 전체 임직원 16,000여 명을 기준으로 보면 하연의 강점은 더 희귀해진다.</p><p>많은 직원이 자신의 업무를 잘할 수는 있다. 그러나 자신의 업무를 타인이 이해하고, 따라 해보고 싶고, 심지어 “나도 이런 사람이 되고 싶다”고 느끼게 만드는 방식으로 전달하는 사람은 많지 않다.</p><p>하연의 역량은 단순 강의 스킬이 아니라 <strong>실무 전문성, 발표력, 정서적 공감, 콘텐츠 기획, 현장 운영, 자기 브랜딩</strong>이 동시에 결합된 형태다.</p><ul class='check-list'><li>업무를 이해하는 사람은 많지만, 업무를 기억 가능한 이야기로 바꾸는 사람은 적다.</li><li>자료를 잘 만드는 사람은 있지만, 자료와 감정의 흐름을 함께 설계하는 사람은 드물다.</li><li>말을 잘하는 사람은 있어도, 교육생이 강의 후에도 연락하고 싶게 만드는 사람은 매우 드물다.</li></ul><blockquote class='pull pull-large final-quote'><p>조직 전체 기준으로 보면 하연은 강의를 잘하는 직원이 아니라, 조직의 경험 자산을 사람에게 전달 가능한 형태로 바꾸는 직원이다.</p></blockquote>"},{"kind":"chapter","title":"8. 만족도 평가 기반 역량 분석","html":"<div class='ch-marker small'>CH. 08 · 여덟 번째 강의의 의미</div><div class='rule small'></div><h3>인생 여덟 번째 강의라는 점의 무게</h3><p class='lede'>이번 강의가 특히 놀라운 이유는 이것이 오래된 전문강사의 누적 결과가 아니라, 하연의 인생에서 여덟 번째 강의라는 점이다.</p><p>보통 사내강사는 강의 횟수가 쌓이면서 비로소 시간 배분, 청중 반응 조절, 자료 완성도, 돌발상황 대응, 마무리 여운 설계를 배운다. 하지만 하연은 이미 여덟 번째 강의에서 이 요소들을 상당 부분 동시에 구현했다.</p><ol class='steps'><li><strong class='item-head'>현재 역량</strong><p>사내강사 300여 명 기준 전달력과 몰입 운영력은 이미 상위권으로 평가할 수 있다.</p></li><li><strong class='item-head'>성장 속도</strong><p>강의 경험이 한 자릿수임에도 후기의 질과 반응 강도가 높다는 점에서 학습 속도가 매우 빠르다.</p></li><li><strong class='item-head'>확장 가능성</strong><p>향후 강의 횟수와 콘텐츠 포트폴리오가 쌓이면, 특정 직무 강의를 넘어 조직문화·신규 온보딩·실무 브랜딩 교육까지 확장될 가능성이 높다.</p></li></ol><blockquote class='pull pull-large final-quote'><p>이번 강의는 완성형 강사의 성과라기보다, 매우 빠른 속도로 완성형에 가까워지고 있는 내부강사의 가능성을 보여준 장면이다.</p></blockquote>"},{"kind":"chapter","title":"9. 공식 평가 점수의 의미","html":"<div class='ch-marker'>CHAPTER 09 <span class='ch-of'>— 12</span></div><h2 class='ch-title'>공식 평가 점수의 의미</h2><p class='ch-sub'>98.32점과 전문성 최고점의 해석</p><div class='rule'></div><div class=\"stats-row\"><div class=\"stat\"><div class=\"stat-num\">98.32</div><div class=\"stat-label\">종합 평균</div></div><div class=\"stat\"><div class=\"stat-num\">98.40</div><div class=\"stat-label\">전문성 최고</div></div><div class=\"stat\"><div class=\"stat-num\">98.29</div><div class=\"stat-label\">교육효과 · 기술/태도 · 교안충실성</div></div></div><p class='lede'>이 점수는 단순 고득점 이상의 의미가 있다. 특히 <strong>전문성 항목이 가장 높게 나온 것</strong>은 단순히 재미있는 강의가 아니라 실제로 깊이 있고 신뢰 가능한 강의로 받아들여졌다는 의미다.</p><p>또한 신규직원 교육 특성상, 교육 초반에는 평가 기준이 보수적으로 형성되고, 첫 인상 강의가 이후 강의들의 기준점(anchor)이 되는 경우가 많다.</p><blockquote class='pull pull-large final-quote'><p>이번 강의는 단순 고득점이 아니라, 좋은 강의의 기준점 역할을 했을 가능성이 높다.</p></blockquote>","chapterId":"chapter-09","chapterStart":true},{"kind":"chapter","title":"10. 이번 경험이 하연에게 남긴 변화","html":"<div class='ch-marker'>CHAPTER 10 <span class='ch-of'>— 12</span></div><h2 class='ch-title'>이번 경험이 하연에게 남긴 변화</h2><p class='ch-sub'>퍼포머에서 경험 설계자로</p><div class='rule'></div><p class='lede'>이번 신입직원 교육은 하연에게 단순 성공 경험 이상의 의미를 남겼다.</p><div class=\"table-wrap\"><table class=\"compare-table\"><thead><tr><th>Before</th><th>After</th></tr></thead><tbody><tr><td>“전문 강사처럼 보이고 싶다”<br>“잘하고 싶다”</td><td><strong>“내 방식으로 사람들에게 오래 남는 경험을 만들고 싶다”</strong></td></tr></tbody></table></div><p>또한 단순 스타성보다 <strong>영향력과 기억 지속성에 더 큰 만족</strong>을 느끼게 되었다.</p><p>강의를 잘한다는 것과 강의로 사람을 변화시킨다는 것 사이에는 큰 차이가 있다. 하연은 이번 경험을 통해 그 차이를 체감하기 시작한 것으로 보인다.</p><blockquote class='pull pull-large final-quote'><p>이는 하연이 단순 퍼포머형 강사에서, 기억과 경험을 설계하는 강사로 이동하고 있다는 신호에 가깝다.</p></blockquote>","chapterId":"chapter-10","chapterStart":true},{"kind":"chapter","title":"11. 최종 평가","html":"<div class='ch-marker'>CHAPTER 11 <span class='ch-of'>— 12</span></div><h2 class='ch-title'>최종 평가</h2><p class='ch-sub'>브랜드형 내부강사 가능성</p><div class='rule'></div><p class='lede'>이번 2025 하반기 신입직원 입문교육은 하연에게 매우 중요한 전환점이었다.</p><p>하연은 단순히 발표를 잘하는 직원이 아니라,</p><ul class='check-list'><li>사람들의 심리적 장벽을 낮추고</li><li>감정을 열고</li><li>실무 감각을 남기고</li><li>관계를 형성하며</li><li>이후까지 기억되게 만드는</li></ul><p><strong>브랜드형 내부강사</strong>로 성장할 가능성을 보여줬다.</p><blockquote class='pull pull-large final-quote'><p>하연은 단순히 직무교육을 잘하는 직원이 아니라, 사람들의 기억과 감정을 움직여 조직 입문 경험 자체를 특별한 사건으로 만드는 내부 브랜드 강사에 가깝다.</p><cite>하연의 GPT, 최종 평가</cite></blockquote>","chapterId":"chapter-11","chapterStart":true},{"kind":"chapter","title":"12. 부록: 만족도 평가 자유서술 후기 원문","html":"<div class='ch-marker'>CHAPTER 12 <span class='ch-of'>— 12</span></div><h2 class='ch-title'>부록</h2><p class='ch-sub'>만족도 평가 자유서술 후기 원문</p><div class='rule'></div><p class='lede'>아래 후기는 2025 하반기 신입직원 입문교육 만족도 평가에서 수집된 자유서술 응답 <strong>131건 전체</strong>다. 문장 일부의 구어체와 감탄 표현은 강의 당시의 생생한 반응을 보존하기 위해 원문 분위기를 유지했다.</p>","chapterId":"chapter-12","chapterStart":true},{"kind":"chapter","title":"부록: 만족도 평가 자유서술 후기 원문","html":"<div class='ch-marker small'>APPENDIX · 후기 원문</div><div class='rule small'></div><p class='lede'>응답 001–006</p><div class='review-list'><div class='review'><div class='review-num'>P · 001</div><p class='review-text'>좋았습니다!</p></div><div class='review'><div class='review-num'>P · 002</div><p class='review-text'>좋아요</p></div><div class='review'><div class='review-num'>P · 003</div><p class='review-text'>좋아요~~</p></div><div class='review'><div class='review-num'>P · 004</div><p class='review-text'>다 좋습니다</p></div><div class='review'><div class='review-num'>P · 005</div><p class='review-text'>넘 좋았습니다!</p></div><div class='review'><div class='review-num'>P · 006</div><p class='review-text'>예시가 귀에 쏙쏙 들어왔어요! 감사합니다 ㅎㅎ</p></div></div>"},{"kind":"chapter","title":"부록: 만족도 평가 자유서술 후기 원문","html":"<div class='ch-marker small'>APPENDIX · 후기 원문</div><div class='rule small'></div><p class='lede'>응답 007–012</p><div class='review-list'><div class='review'><div class='review-num'>P · 007</div><p class='review-text'>발음이 또박또박 잘 들렸어요!</p></div><div class='review'><div class='review-num'>P · 008</div><p class='review-text'>유쾌하고 재밌는 강의였습니다! 감사합니다</p></div><div class='review'><div class='review-num'>P · 009</div><p class='review-text'>긴시간 좋은 강의 너무 감사합니다 ㅎㅎ</p></div><div class='review'><div class='review-num'>P · 010</div><p class='review-text'>이해가 잘 되고 좋았어요~~~!!</p></div><div class='review'><div class='review-num'>P · 011</div><p class='review-text'>정말 배우고 싶을정도로 수준높은 강의였습니다. 너무 감사합니다!</p></div><div class='review'><div class='review-num'>P · 012</div><p class='review-text'>너무 좋아요! 다른 강사분들보다 내용 전달도 좋고 유익했습니다</p></div></div>"},{"kind":"chapter","title":"부록: 만족도 평가 자유서술 후기 원문","html":"<div class='ch-marker small'>APPENDIX · 후기 원문</div><div class='rule small'></div><p class='lede'>응답 013–018</p><div class='review-list'><div class='review'><div class='review-num'>P · 013</div><p class='review-text'>실제 인정조사 현장에서 판단이 애매한 부분들에 대한 예시를 많이 들어주셔서 좋았습니다~!</p></div><div class='review'><div class='review-num'>P · 014</div><p class='review-text'>모든 것이 완벽했습니다. 현장에서 잘 활용하겠습니다! 감사합니다 대리님!</p></div><div class='review'><div class='review-num'>P · 015</div><p class='review-text'>대리님 진짜 실전에서 써먹을 수 있는 명강의였습니다 감사합니당</p></div><div class='review'><div class='review-num'>P · 016</div><p class='review-text'>귀에 잘 들어오는 강의였습니다</p></div><div class='review'><div class='review-num'>P · 017</div><p class='review-text'>완전 프로페셔널 하세요! 강의 너무 재밌게 잘 들었습니다❤️</p></div><div class='review'><div class='review-num'>P · 018</div><p class='review-text'>2주차 강의 들으면서 제일 인상 깊고 재밌게 들었던 강의였습니다🤍</p></div></div>"},{"kind":"chapter","title":"부록: 만족도 평가 자유서술 후기 원문","html":"<div class='ch-marker small'>APPENDIX · 후기 원문</div><div class='rule small'></div><p class='lede'>응답 019–024</p><div class='review-list'><div class='review'><div class='review-num'>P · 019</div><p class='review-text'>강의 잘 들었습니다</p></div><div class='review'><div class='review-num'>P · 020</div><p class='review-text'>어려윤 내용을 실제사례와 함께 잘 설명해주셔서 도움이 됐습니다~<br>감사합니다!</p></div><div class='review'><div class='review-num'>P · 021</div><p class='review-text'>이해가 쏙쏙 가는 명강의였습니다~! ✨</p></div><div class='review'><div class='review-num'>P · 022</div><p class='review-text'>쉬는시간이 길어서 좋았습니다. 내용이 현실적이여서 좋앗습니다. 헷갈리는 부분을 비교해 주시는 예시가 좋았습니다</p></div><div class='review'><div class='review-num'>P · 023</div><p class='review-text'>완벽..! 강의력/준비도/재미/내용 다 너무 좋았어요..💗</p></div><div class='review'><div class='review-num'>P · 024</div><p class='review-text'>발음도 정확하고 속도도 듣기 편하고 일단 너무 예쁘세용😍😍</p></div></div>"},{"kind":"chapter","title":"부록: 만족도 평가 자유서술 후기 원문","html":"<div class='ch-marker small'>APPENDIX · 후기 원문</div><div class='rule small'></div><p class='lede'>응답 025–030</p><div class='review-list'><div class='review'><div class='review-num'>P · 025</div><p class='review-text'>딕션도 너무 좋으시고 강의 준비도 많이 해주셔서 좋았어요. 모든 강의 들어와주셨으면 좋겠습니다!!!</p></div><div class='review'><div class='review-num'>P · 026</div><p class='review-text'>목소리도 너무 좋으셔서 귀에 쏙쏙 잘 들어와요!<br>알기쉽게 설명해주셔서 너무 감사합니다 💖<br>오늘 너무 유익한 강의였어요!!!! 대리님이 알려주신 내용으로 앞으로 열심히 일하겠습니다 &gt;&lt;</p></div><div class='review'><div class='review-num'>P · 027</div><p class='review-text'>목소리도 너무 좋으시고 넘 이쁘세용🩵🩵 <br>정말 유용하고 실전에서 써먹을수 있는 꿀강의였습니당🩵🥹</p></div><div class='review'><div class='review-num'>P · 028</div><p class='review-text'>너무 좋은 강의💓<br>같은 작업치료사로서 너무 자랑스러워요<br>다음엔 선배와의 시간에서 뵙고싶어요</p></div><div class='review'><div class='review-num'>P · 029</div><p class='review-text'>귀에 쏙쏙박히는 강의해주셔서 감사합니다!!!!!</p></div><div class='review'><div class='review-num'>P · 030</div><p class='review-text'>속도 전달력 난이도 모두 완벽했습니다 실사례까지 잘 활용해주셔서 3시간이 너무 재밌게 지나갔어요</p></div></div>"},{"kind":"chapter","title":"부록: 만족도 평가 자유서술 후기 원문","html":"<div class='ch-marker small'>APPENDIX · 후기 원문</div><div class='rule small'></div><p class='lede'>응답 031–036</p><div class='review-list'><div class='review'><div class='review-num'>P · 031</div><p class='review-text'>대리님 이쁘세요!</p></div><div class='review'><div class='review-num'>P · 032</div><p class='review-text'>전달 잘됐고 집중 잘됐습니다. 덕분에 많이 배운것 같아요.<br>감사합니다.</p></div><div class='review'><div class='review-num'>P · 033</div><p class='review-text'>이해하기 쉽게 강의를 해주셨습니다.감사합니다.</p></div><div class='review'><div class='review-num'>P · 034</div><p class='review-text'>대리님 3시간반동안 집중 유지해서 들은 강의는 처음인곳 같습니다. 유익함, 재미 밸런스 있는 좋은 강의였습니다. 감사합니다!</p></div><div class='review'><div class='review-num'>P · 035</div><p class='review-text'>좋아요</p></div><div class='review'><div class='review-num'>P · 036</div><p class='review-text'>오후시간에 하나도 안 졸릴정도로 재미있는<br>강의였습니다..!<br>다양한 사례와 예시를 설명해주셔서 실무에 너무 도움이 될거 같다고 생각했습니다..!<br>그리고 너무 아름다우셔요🥹 전문성있는 모습 너무 닮고싶어용!</p></div></div>"},{"kind":"chapter","title":"부록: 만족도 평가 자유서술 후기 원문","html":"<div class='ch-marker small'>APPENDIX · 후기 원문</div><div class='rule small'></div><p class='lede'>응답 037–042</p><div class='review-list'><div class='review'><div class='review-num'>P · 037</div><p class='review-text'>목소리와 속도 강의 내용 등 다 너무 좋았습니다! 특히 예시를 많이 보여주셔서 이해도를 더욱 높일 수 있어서 너무 좋았습니다!👍</p></div><div class='review'><div class='review-num'>P · 038</div><p class='review-text'>정말 아나운서분 같은 목소리와 피치를 가지고 계십니다. 준비해오신 부분들이 실무에서 충분히 바로 적용할 수 있도록 구체적으로 준비해와주셔서 감사합니다!</p></div><div class='review'><div class='review-num'>P · 039</div><p class='review-text'>한달동안 준비하신만큼 세시간 반 강의가 지루하지않았습니당 ㅎㅎ 감사합니다!</p></div><div class='review'><div class='review-num'>P · 040</div><p class='review-text'>목소리도 좋으시고 강의 내용 전달도 너무 잘 되었던 좋은 강의였습니다ㅎㅎ 뒤에 앉아있는 사람들에게 확대 포인터 너무 좋았던 것 같아요~!</p></div><div class='review'><div class='review-num'>P · 041</div><p class='review-text'>전달력 최고 속도 촤고 난이도 최고 태도 최고<br>다 좋음! 아나운서같으시구 복장도 깔끔하게 강사처럼 너무 좋음! 이해쏙쏙</p></div><div class='review'><div class='review-num'>P · 042</div><p class='review-text'>인정조사 항목이 처음이라 내용이 어려워보여서 막막했는데 알기쉽고 재밌게 이야기해주셔서 너무 좋았습니다~~ 해맑은 미소도 너무 이쁘세요ㅎㅎ 잘 알려주셔서 감사합니다~~</p></div></div>"},{"kind":"chapter","title":"부록: 만족도 평가 자유서술 후기 원문","html":"<div class='ch-marker small'>APPENDIX · 후기 원문</div><div class='rule small'></div><p class='lede'>응답 043–048</p><div class='review-list'><div class='review'><div class='review-num'>P · 043</div><p class='review-text'>인정조사에 대한 막연한 두려움 어려움이 있었는데 항목별로 구체적인 사례로 이해하기 쉽게 강의해주셔서 쏙쏙 들어왔어요!!!<br>명강의이십니당<br>4시간이 순삭되는 느낌이었어요!!! 유일하게 잠이 안오는 강의였어요🥰<br>실제 사례와 퀴즈로 들어보니 더 현장감있고 좋았어요<br>좋은 강의 감사합니다~</p></div><div class='review'><div class='review-num'>P · 044</div><p class='review-text'>목소리가 까랑까랑하고 발음도 좋아서 강의 전달력이 좋았습니다. 강의 진행하시는 동안 적극적인 태도로 하셔서 집중력 높이기 좋았습니다.</p></div><div class='review'><div class='review-num'>P · 045</div><p class='review-text'>점심시간 이후라 늘 헤롱헤롱 하는데 강사님은 목소리 톤부터 좋으시고 잘 알려주셔서 집중이 잘됐습니다 감사합니다 ❤️</p></div><div class='review'><div class='review-num'>P · 046</div><p class='review-text'>대리님 너무 유익한 강의 감사드립니다. 꿀팁과 좋은 강의로 두려움이 많이 사라졌어요! 감사합니다.</p></div><div class='review'><div class='review-num'>P · 047</div><p class='review-text'>구체적인 예시와 헷갈리기 쉬운 부분을 짚어주셔서 이해하기 좋았습니다^^</p></div><div class='review'><div class='review-num'>P · 048</div><p class='review-text'>쉽고 정확하게 열정적으로 잘 알려쥬셔서 감사합니다~~~ 저도 대리님 처럼 일잘러 될수 있을 것 같아요 ~🥹</p></div></div>"},{"kind":"chapter","title":"부록: 만족도 평가 자유서술 후기 원문","html":"<div class='ch-marker small'>APPENDIX · 후기 원문</div><div class='rule small'></div><p class='lede'>응답 049–054</p><div class='review-list'><div class='review'><div class='review-num'>P · 049</div><p class='review-text'>강의 좋았습니다</p></div><div class='review'><div class='review-num'>P · 050</div><p class='review-text'>좋은 강의 감사합니다!<br>시간적 제약으로 많은 양을 강의하다보니 난이도는 어렵게 느껴졌습니다ㅠㅠ</p></div><div class='review'><div class='review-num'>P · 051</div><p class='review-text'>어려운 내용을 쉽고 재미있게 설명해 주셔서 이해가 잘 됐습니다. 긴 시간 동안에도 항상 활기차고 열정적인 모습으로 강의해 주셔서 정말 인상 깊었고, 덕분에 끝까지 집중해서 들을 수 있었습니다. 좋은 강의 감사합니다!</p></div><div class='review'><div class='review-num'>P · 052</div><p class='review-text'>겅의 전달력과 속도가 여태 들은 강의 중 최고였습니다!ㅎㅎㅎ 항상 웃으며 설명해주셔서 더 집중이 잘 되었습니다. 좋은 강의 감사합니다!</p></div><div class='review'><div class='review-num'>P · 053</div><p class='review-text'>3시간30분이 넘는강의를 지친모습 하나 없이 진행하시고 시간까지 매번 체크하시면서 완벽한 강의를 하시는 모습에 반했습니다~~너무 열정가득하시고 멋지십니다~저도 대리님을 닮아가고싶습니다 감사합니다🩷🩷</p></div><div class='review'><div class='review-num'>P · 054</div><p class='review-text'>시작부터 강의에 몰입할수 있게끔 시작하신것이 굉장히 인상적이었습니다. <br>목소리, 발음, 그리고 강의를 재미있게 기획하셔서 시간가는줄모르고 들었어요! 그리고 실제예시를 들어주시니 몰입을잘할수있었습니다~</p></div></div>"},{"kind":"chapter","title":"부록: 만족도 평가 자유서술 후기 원문","html":"<div class='ch-marker small'>APPENDIX · 후기 원문</div><div class='rule small'></div><p class='lede'>응답 055–060</p><div class='review-list'><div class='review'><div class='review-num'>P · 055</div><p class='review-text'>4시간이 어떻게 지나갔는 지 모를 정도로 귀에 쏙쏙 들리는 알찬 강의 감사합니다 :)<br>모든 것이 다 완벽했고, 또 대리님의 강의를 듣고 싶어요~~! 무엇보다 딕션이 좋으셔서 아나운서 같으세요♥️ 덕분에 유의미한 정보 배웠습니다 감사합니다!</p></div><div class='review'><div class='review-num'>P · 056</div><p class='review-text'>또랑또랑한 목소리로 좋은 강의 들려주셔서 감사합니다 :)</p></div><div class='review'><div class='review-num'>P · 057</div><p class='review-text'>대리님의 수업 너무 재밌었고 유익했습니다.<br>속도가 루즈하지 않고 귀에 쏙쏙 박히고<br>많은 항목을 소개해주심에도 불구하고 신입의 관점에서 헷갈려할만한 항목들은 또 한번 짚고 넘어가 주셔서 너무 큰 도움이 됐습니다!<br>대리님 수업하시는 모습 너무 활기차고 행복해보이셔서 입사가 더 설레지는것 같습니다🫶</p></div><div class='review'><div class='review-num'>P · 058</div><p class='review-text'>너무 재미있고 활기찬 강의 너무 감사합니다!<br>제가 사회복지사이다 보니 IADL 이런 용어가 어려워서 강의 시 어려움이 있었습니다ㅠㅠ<br>그래도 신입 사원으로 배울 점이 너뮤 많아서 유익한 시간이었습니당! 감사합니다😊</p></div><div class='review'><div class='review-num'>P · 059</div><p class='review-text'>안녕하세요 대리님, 오늘 긴 강의 내내 열정적인 모습에 너무 감동 받았습니다.. 이전 직장 생활을 돌아보면 저는 주어진 일을 하는 사람이고 주변에도 그런 분들만 있었는데, 저의 모습을 반성하게 되었던 시간이었습니다. 앞으로 공단에 입사하여 열심히 임하는 직원이 되고 싶네요!!<br>그리고 오늘 강의 너무 쉽게 설명해 주시고, 전달도 잘 되어서 그 동안 들었던 업무 강의 중에 제일 좋았습니다! 너무 감사합니다~</p></div><div class='review'><div class='review-num'>P · 060</div><p class='review-text'>열정 넘치시고 재미있는 강의 해주셔서 감사합니다!!</p></div></div>"},{"kind":"chapter","title":"부록: 만족도 평가 자유서술 후기 원문","html":"<div class='ch-marker small'>APPENDIX · 후기 원문</div><div class='rule small'></div><p class='lede'>응답 061–066</p><div class='review-list'><div class='review'><div class='review-num'>P · 061</div><p class='review-text'>아나운서 같으시구 귀에 쏙쏙 잘들어오게 강의잘해주셔서 감사합니다!!</p></div><div class='review'><div class='review-num'>P · 062</div><p class='review-text'>정말 귀에 쏙 들어오는 강의였습니다</p></div><div class='review'><div class='review-num'>P · 063</div><p class='review-text'>좋은강의 잘들었습니다!</p></div><div class='review'><div class='review-num'>P · 064</div><p class='review-text'>실제 업무에서 도움이 많이 될 것 같아서 너무 좋습니당 ㅎㅎ!! 궁금한 거 있으면 담에 또 연락드릴게요 감사합니다</p></div><div class='review'><div class='review-num'>P · 065</div><p class='review-text'>준비를 많이 하신게 느껴졌어요! 대리님의 반짝반짝 눈이 기억에 많이 남아요. 좋은 강의 감사합니다😆</p></div><div class='review'><div class='review-num'>P · 066</div><p class='review-text'>목소리랑 발음이 좋으셔서 집중이 잘 됐어요.</p></div></div>"},{"kind":"chapter","title":"부록: 만족도 평가 자유서술 후기 원문","html":"<div class='ch-marker small'>APPENDIX · 후기 원문</div><div class='rule small'></div><p class='lede'>응답 067–072</p><div class='review-list'><div class='review'><div class='review-num'>P · 067</div><p class='review-text'>강의가 정말 유익하고 좋았어요<br>상황에 따라 사례도 알려주시고 집중하기 정말 좋았습니다!!</p></div><div class='review'><div class='review-num'>P · 068</div><p class='review-text'>너무 좋은 강의 감사합니다 ^^</p></div><div class='review'><div class='review-num'>P · 069</div><p class='review-text'>한지민 닮았어용!! 너무 예쁘세영 강의 실제 경험담과 엮어서 이야기해주셔서 이해가 잘됐습니다 감사합니다</p></div><div class='review'><div class='review-num'>P · 070</div><p class='review-text'>강의 중간중간 실제 사례를 많이 말씀해주셔서 너무 좋았어요 ! 실습하는 시간이 있어서 지루하지 않았어요 ~</p></div><div class='review'><div class='review-num'>P · 071</div><p class='review-text'>강사님이 현실감있게 해쥬신 설명이 많이 와닿는거같습니다! 경험 많이 이야기해주셔서 좋아요ㅎㅎ</p></div><div class='review'><div class='review-num'>P · 072</div><p class='review-text'>네시간이었지만 전혀 지루하지않았고 말씀에 힘이있어서 듣기 편했습니다.</p></div></div>"},{"kind":"chapter","title":"부록: 만족도 평가 자유서술 후기 원문","html":"<div class='ch-marker small'>APPENDIX · 후기 원문</div><div class='rule small'></div><p class='lede'>응답 073–078</p><div class='review-list'><div class='review'><div class='review-num'>P · 073</div><p class='review-text'>건보 퇴사하고 전문강사로 활동할까봐 걱정됩니다... 정말 좋은 강의 잘 들었습니다. <br>연말 마무리 잘 하시구 좋은 일들만 계시길 바랍니다.</p></div><div class='review'><div class='review-num'>P · 074</div><p class='review-text'>대리님 예뻐요!!!<br>중간중간 업무나 지사적응 팁도 유익해서 좋았습니다!</p></div><div class='review'><div class='review-num'>P · 075</div><p class='review-text'>너무 멋있으세요,,,,,</p></div><div class='review'><div class='review-num'>P · 076</div><p class='review-text'>정말 완벽한 강의였고 실무에서 써먹을 수 있는 꿀팁들 !! 많이 배웠습니다 ㅎㅎ 열심히 준비해주신 게 느껴져서 더 감동이었고 저 또한 열심히 들을 수 있었습니다 감사합니다😆</p></div><div class='review'><div class='review-num'>P · 077</div><p class='review-text'>알차게 준비하셔서 강의시간 내내 지루함없이 들을 수 있었습니다<br>감사합니다^^</p></div><div class='review'><div class='review-num'>P · 078</div><p class='review-text'>재밌고 또박또박한 발음으로 교육해주셔서 집중이 잘 되었습니다. 아나운서 같으세요.<br>강의력 좋은 젊은 교수님 뵙는 것 같았습니다.</p></div></div>"},{"kind":"chapter","title":"부록: 만족도 평가 자유서술 후기 원문","html":"<div class='ch-marker small'>APPENDIX · 후기 원문</div><div class='rule small'></div><p class='lede'>응답 079–084</p><div class='review-list'><div class='review'><div class='review-num'>P · 079</div><p class='review-text'>에너지 넘치는 모습과 <br>좀 지루한 내용일 수 있지만 그래도 자세한 설명과 사례를 기반으로 설명 해주셔서 감사합니다</p></div><div class='review'><div class='review-num'>P · 080</div><p class='review-text'>강의 준비를 정말 열심히 하신게 느껴지고 신입직원입장에서 최대한 알수있게 설명해주셔서 감사햇습니디</p></div><div class='review'><div class='review-num'>P · 081</div><p class='review-text'>내용의 질과 강의에 임하시는 태도가 멋있었습니다!👏👏</p></div><div class='review'><div class='review-num'>P · 082</div><p class='review-text'>2주차이긴 하지만 앞으로 교육이 지금처럼만 진행된다면 안졸고 재미있게 잘 들을 수 있을 것 같습니다:)</p></div><div class='review'><div class='review-num'>P · 083</div><p class='review-text'>너무너무 좋은 강의 감사합니다..👍🏻👍🏻<br>건보 아나운서 같습니다💗😆💗<br>알찬 강의 시간 가는줄모르고 들었습니다!<br>감사합니다!!!</p></div><div class='review'><div class='review-num'>P · 084</div><p class='review-text'>인정조사와 관련해서 고민이 많았는데 세세하게 알려주셔서 너무 감사합니다!<br>전달력이 엄청 좋으셔서 귀에 쏙쏙 들어왔어요 ㅎㅎ</p></div></div>"},{"kind":"chapter","title":"부록: 만족도 평가 자유서술 후기 원문","html":"<div class='ch-marker small'>APPENDIX · 후기 원문</div><div class='rule small'></div><p class='lede'>응답 085–090</p><div class='review-list'><div class='review'><div class='review-num'>P · 085</div><p class='review-text'>기준에 대해 어려운게 많았는데 요양직으로 근무하며 겪을 수 있는 자세한 사례와 판정 기준에 대해 잘 알려주셔서 너무 유익한 강의였습니다 ❤️</p></div><div class='review'><div class='review-num'>P · 086</div><p class='review-text'>실제 현장에서 적용할 수 있도록 청강자의 입장에서 설명해주셨습니다. 또 강의 내내 전혀 지루함이 없는 꽉찬 강의를 해주셔서 즐겁게 들었습니다!</p></div><div class='review'><div class='review-num'>P · 087</div><p class='review-text'>이렇게까지 준비해주신 강사님은 처음이신것같아요!! 정말 실전에 써먹을 수 있는 유익한 시간이었습니다 감사합니다</p></div><div class='review'><div class='review-num'>P · 088</div><p class='review-text'>긴 수업이었는데 지루하지 않고 입사 후 바로 적용할 수 있는 정말 유익한 강의시간이었습니다!</p></div><div class='review'><div class='review-num'>P · 089</div><p class='review-text'>여태 들었던 강의 중 가장 지루하지 않고, 졸지 않고 집중해서 들을 수 있었던 강의였습니다! 현장에 실제로 투입되면 정말 많은 도움이 될 거 같아요~! 좋은 강의 감사합니다!</p></div><div class='review'><div class='review-num'>P · 090</div><p class='review-text'>내용도 알차고 경험도 많이 얘기해주셔서 진짜 실전에서 바로 도움이 될 것 같아요!! 강의 준비도 너무 열심히 해주신 것 같아요 정말 감사합니당!</p></div></div>"},{"kind":"chapter","title":"부록: 만족도 평가 자유서술 후기 원문","html":"<div class='ch-marker small'>APPENDIX · 후기 원문</div><div class='rule small'></div><p class='lede'>응답 091–096</p><div class='review-list'><div class='review'><div class='review-num'>P · 091</div><p class='review-text'>수업 시간과 쉬는 시간을 적절하게 잘 배분해주셔서 피로해질때쯤 쉬고 다시 수업을 집중적으로 들을 수 있어서 좋았습니다!</p></div><div class='review'><div class='review-num'>P · 092</div><p class='review-text'>안녕하세요 대리님!ㅎㅎ 부울경 권역 지원해서 다음에 뵙기는 어려울 수 있지만 오늘 강의 너무 재미있었어요🥹 인개원 들어와서 수강한 직무 강의 중에 가장 재밌었고, 어떤 식으로 인정조사에 임해야 할 지 잘 알 수 있었습니다! 완벽한 강의 준비해주셔서 감사합니다😖❤️</p></div><div class='review'><div class='review-num'>P · 093</div><p class='review-text'>실무에서 활용 가능한 이야기들로 구성해주셔서 도움이 되었습니다. 중간중간 지루하지 않게 이벤트 넣어주신 부분도 기억에 남습니다. 오늘 강의 감사합니다!</p></div><div class='review'><div class='review-num'>P · 094</div><p class='review-text'>넘넘 친절하고 예쁜 대리님!!<br>예시도 많이 들어주시고 꼼꼼하게 설명해주셔서 이해도 잘되고 수업 집중도 잘됐습니다 <br>같은 지사에 있으면 너무 든든할 것 같아용🤍<br>좋은 강의 감사합니다!!</p></div><div class='review'><div class='review-num'>P · 095</div><p class='review-text'>진짜 강사하셔도 될만큼 완벽한 강의였습니다!<br>강단에 선다는게 떨릴거같은데 너무 자연스럽게 잘 하셔서 전문강사 같으셨어요 ㅎㅎ <br>수업 내용도 너무 재밌었습니당 덕분에 4시간이 금방 지나갔어요~~♡</p></div><div class='review'><div class='review-num'>P · 096</div><p class='review-text'>너무 재밌었고 에너지가 좋았어요 ㅎㅎ <br>지사에 가서도 대리님같이 적극적이고 열심히 하는 직원이 되고싶습니다!</p></div></div>"},{"kind":"chapter","title":"부록: 만족도 평가 자유서술 후기 원문","html":"<div class='ch-marker small'>APPENDIX · 후기 원문</div><div class='rule small'></div><p class='lede'>응답 097–102</p><div class='review-list'><div class='review'><div class='review-num'>P · 097</div><p class='review-text'>ENTJ라고 했는데 인개원 사진 공유하면서 간절 행복 감사 에 대해 말씀하셔서 F 인줄 알았어요 윽 수업 시작 전부터 울뻔했어요</p></div><div class='review'><div class='review-num'>P · 098</div><p class='review-text'>샤워하고 소주한잔 하면서 피드백 보신다는말이 와닿았습니다! 아나운서 같은 딕션과 밝은에너지가 너무 좋았고, 지루한 내용을 지루하지 않게 이끌어가주시는 능력치가 배우고 싶어요! 감사합니다 좋은하루보내세요!</p></div><div class='review'><div class='review-num'>P · 099</div><p class='review-text'>이렇게까지 열정적으로 준비해오신 강사님은 안계셨던것 같습니다. 열정적으로 준비하신 만큼 이해도 잘되고 만족도가 정말 높습니다. <br>대리님 하시는 일 항상 잘 되셨으면 좋겠습니다.</p></div><div class='review'><div class='review-num'>P · 100</div><p class='review-text'>밝은 에너지로 강의해주셔서 집중도 잘되고 너무 좋았습니다! 예시도 많이 들어주셔서 더 잘 이해할 수 있었습니다 감사합니다!!</p></div><div class='review'><div class='review-num'>P · 101</div><p class='review-text'>확신의 entj이십니다...완벽한 강의 그 자체...하나의 흐트러짐 없는 스무스한 강의였습니다!!! 신규로서도 많은 도움이 될 것 같아요 감사합니다:)</p></div><div class='review'><div class='review-num'>P · 102</div><p class='review-text'>너무 예쁘시고 사례까지 들어서 너무 잘알려주셔서 감사합니다👍👍💓</p></div></div>"},{"kind":"chapter","title":"부록: 만족도 평가 자유서술 후기 원문","html":"<div class='ch-marker small'>APPENDIX · 후기 원문</div><div class='rule small'></div><p class='lede'>응답 103–108</p><div class='review-list'><div class='review'><div class='review-num'>P · 103</div><p class='review-text'>안녕하세요~ 대리님 덕분에 또 하나 배우고 가는 것 같습니다. 1년 뒤에 저 또한 사내강사로 대리님처럼 멋지진 않겠지만 그래도 성장해서 많은 사람들에게 긍정과 선한 에너지를 전달하고 싶어요! 너무 좋았고 유익한 시간이자 강의였습니다. 항상 행복하시고 건강하세요!💓</p></div><div class='review'><div class='review-num'>P · 104</div><p class='review-text'>entj 강사님 처음에는 열정에 부담감을 느꼈지만 강의가 끝났을 때는 다른 어느 강의보다 머리속에 많은 내용이 들어가 있었습니다. 나중에 지사가서도 쓸 유용한 정보도 강의해주셔서 감사합니다🙂</p></div><div class='review'><div class='review-num'>P · 105</div><p class='review-text'>자세하고 친절하게 강의해주셔서 이해하기 쉬웠습니다 감사합니다</p></div><div class='review'><div class='review-num'>P · 106</div><p class='review-text'>아나운서 같은 발성 목소리 최고에요~~~~~! 현실적인 조언 담긴 강의 덕에 실제 업무 할 때 도움이 많이 될 것 같습니다 ❤️ 감사합니다 대리님 ❤️ (대리님 너무 예뻐요~~~~)</p></div><div class='review'><div class='review-num'>P · 107</div><p class='review-text'>수업 시작 부분에 일상얘기+업무얘기를 먼저 말씀해주셔서 훨씬 집중이 잘됬어욤🥹 한달 동안 준비하셨다고 하는데 그 노력이 느껴지실만큼 수업집중도 잘되고, 예시 사례들을 많이 들어주셔서 좀 더 내용에 와닿았습니다! 앞으로 걱정많을 인정조사에서 많은 부분을 배웠습니당 감사합니닷</p></div><div class='review'><div class='review-num'>P · 108</div><p class='review-text'>에너지 넘치고, 즐거운 분위기 속에서<br>조사항목을 가르쳐주셔서 이해하는데 큰 도움이 되었습니다! 특히 관련된 예시들을 들면서 쉽게 설명해주신 게 큰 도움이 됐습니다!<br>저도 대리님처럼 후배들에게 도움이 되는 사람이 되고 싶다는 생각을 하게 되었습니다. 감사합니다!</p></div></div>"},{"kind":"chapter","title":"부록: 만족도 평가 자유서술 후기 원문","html":"<div class='ch-marker small'>APPENDIX · 후기 원문</div><div class='rule small'></div><p class='lede'>응답 109–114</p><div class='review-list'><div class='review'><div class='review-num'>P · 109</div><p class='review-text'>어려운 내용일수도 있었는데 이해하고 알기쉽게 설명해주셔서 지루할 틈 없이 강의 잘 들을 수 있었습니다! 실제로 활용할 수 있는 꿀팁들 추후 지사 가서도 잊지않고 잘 활용하도록 하겠습니다! 좋은 강의 감사합니다 &gt;.&lt;</p></div><div class='review'><div class='review-num'>P · 110</div><p class='review-text'>많이 피곤한 시간이였는데도! 4시간이 정말 금방 간것 같습니다.얼굴도 이쁘신데 발음도 좋으셔서 귀에 쏙쏙 들어오는 강의 였습니다. 내용이 사실 어렵고 헷갈리는 부분이 많았는데 매번 쉽게 설명해주셔서 이해가 빨랐습니다.</p></div><div class='review'><div class='review-num'>P · 111</div><p class='review-text'>강의 듣기 전에는 인정조사 항목들이 너무 어렵고 혼자서 어떻게 할 수 있을까 걱정이 앞섰는데,<br>직접 사례를 들어 설명해주시고, 재밌고 명확하게 어떻게 하시면 되는지 설명해주셔서 자신감이 생겼습니다! 다음에 꼭 다시 뵙고 싶어요💟🌟</p></div><div class='review'><div class='review-num'>P · 112</div><p class='review-text'>요양직 선배님이시지만 전문 강사님이라고 생각될 정도로 완벽하고 구조적인 강의에 정말 놀랐습니다! 업무를 하시면서 강의준비까지 완벽하게 하시는 모습이 존경스러웠습니다 ㅎㅎ 대리님과 같은 직장 동료라는 것이 자랑스럽습니다! 오늘 많이 배웠습니다 감사합니다!🥹</p></div><div class='review'><div class='review-num'>P · 113</div><p class='review-text'>정말 많이 준비를 해오신 것이 느껴지는 강의였습니다! 강의가 직업이 아닌 분이심에도 불구하고 탄탄한 수업 해주셔서 감사드립니다!<br>또한, 수업 첫 시작 부분에 흥미를 끌만한 주제로 먼저 이어나가서 수업에 집중할 수 있었습니다!<br>감사합니다</p></div><div class='review'><div class='review-num'>P · 114</div><p class='review-text'>대리님은 신규 직원들의 에너지를 받아 가신다고 하셨지만, 수업을 들으며 제가 더 많은 에너지와 열정을 본받고 싶다는 마음을 받은 것 같습니다!<br>너무 재미있고 알찼던 수업 감사합니다. 저도 실수없이 업무 잘하고 싶은데 대리님이 신규이실 때 적응하셨던 노하우를 이어받아 잘 해나가고 싶다는 마음입니당ㅎㅎ많은 것들 알려주셔서 정말 감사합니다!</p></div></div>"},{"kind":"chapter","title":"부록: 만족도 평가 자유서술 후기 원문","html":"<div class='ch-marker small'>APPENDIX · 후기 원문</div><div class='rule small'></div><p class='lede'>응답 115–120</p><div class='review-list'><div class='review'><div class='review-num'>P · 115</div><p class='review-text'>마이크 들고 강단 앞으로 걸어 나와 신입 직원들의 눈을 마주치며 열강해 주시는 모습이 인상 깊었습니다. 한 달이라는 짧지 않은 시간을 투자해 우리를 만나러 와주신 대리님 너무 감사합니다.</p></div><div class='review'><div class='review-num'>P · 116</div><p class='review-text'>- 강의 내용이 알차고 명확해서 큰 도움이 되었습니다. 또한 신규직원으로 강의를 통해 전문성을 가지고 업무에 임할수있을것같습니다 좋은 강의 감사합니다:)</p></div><div class='review'><div class='review-num'>P · 117</div><p class='review-text'>아나운서처럼 전달력이 넘 좋으신 것 같아요!! <br>실제 업무에서 유용하게 써먹을 수 있는 강의 해주셔서 감사합니다❤️ 넘 유익했습니다!!</p></div><div class='review'><div class='review-num'>P · 118</div><p class='review-text'>다양한 사례들을 말씀해주셔서 더 도움이 많이 되었어요. 들으면서도 헷갈리는 사례들이 너무 많은데 왜 맞는지, 왜 아닌지, 왜 더 봐야하는지 등 구체적으로 말씀해주셔서 쉽게 이해할 수 있었습니다.<br>목소리와 전달력이 좋아서 더 잘 이해되었고 아나운서가 같았어요,,ㅎ<br>다양한 이벤트들과 쉬는시간 이후마다 리프레시 시간 등 너무 많이 생각해주신 것이 느껴져서 감사한것이 많은 강의였습니다.<br>앞으로도 파이팅입니다,,!</p></div><div class='review'><div class='review-num'>P · 119</div><p class='review-text'>직접 현장 사례를 전해주시면서 강의를 해주셔서 훨씬 더 전달력이 좋았고, 중간마다 아이스브레이킹이 적절하게 들어가서 피곤한 상황에서도 지루하지않게 잠도 이겨내고 집중해서 들을 수 있었습니다~! 얼마나 오랫동안 정성을 다해 준비하셨는지 느껴져서 저도 더 열심히 듣게 되었어요 감사합니당</p></div><div class='review'><div class='review-num'>P · 120</div><p class='review-text'>매시간마다 지루하지않게 여러 사진과 이벤트를 해주셔서 재밌었어요 강의 내용도 너무 유익했습니다🫶🏻ㅎㅎ</p></div></div>"},{"kind":"chapter","title":"부록: 만족도 평가 자유서술 후기 원문","html":"<div class='ch-marker small'>APPENDIX · 후기 원문</div><div class='rule small'></div><p class='lede'>응답 121–126</p><div class='review-list'><div class='review'><div class='review-num'>P · 121</div><p class='review-text'>강의 자료를 잘 준비해주셔서 많은 도움이 되었습니당! 그리구 실무에 적용하기 좋은 팁들도 알려주셔서 좋았습니당ㅎㅎ 좋은 강의 감사합니다!</p></div><div class='review'><div class='review-num'>P · 122</div><p class='review-text'>4시간 동안 요양직 직무에 대해서 자세하게 설명해주셔서 감사합니다!! 아무것도 모르고 일을 시작할뻔한 저에게 이 교육으로 그래도 업무를 아는 신입직원으로 입사를 할 수 있게 된 것 같습니다!</p></div><div class='review'><div class='review-num'>P · 123</div><p class='review-text'>재미있었어요 귀에 쏙쏙들어오고..! 글만 있는게 아니라 사례도 이야기해주셔서 이렇게 적용하는 구나. 아 이런 사례도 있구나 하는 생각이 들어요! 한편으로는 저걸 어떻게 물어보지? 나 거짓말에 속으면 어쩌지 하는 생각도 들어요 ㅎㅎ 하지만 굉장히 유익했고 재미있었습니다 오늘 강의 정말 감사합니다! 🫰🏻 그리고 예쁘세여!</p></div><div class='review'><div class='review-num'>P · 124</div><p class='review-text'>열정있는 강의 감사합니다.<br>특히 지사 배치받고 배운 내용들을 매뉴얼로 만드는 꿀팁 저도 실천해보겠습니다. 감사합니다!</p></div><div class='review'><div class='review-num'>P · 125</div><p class='review-text'>안녕하세요 대리님! E반 수강생입니다😊💕<br>대리님은 T, 저는 F인ㅎㅎENFJ라 MBTI퀴즈를 한박자 늦은게 유일한 아쉬움이에요. 어려운 강의인데도 친절하고 확실하게 알려주신데다 다른 꿀팁들도 많이 말씀주셔서 지사 발령에 대한 두려움이 조금!은 해소되지 않았나 싶습니다.<br>비록 저는 부울경인지라 대리님과 같은 지사로 갈 수는 없겠지만, 늘 열정넘치는 강의로 다음에도 뵙길 희망합니다! 감사합니다.</p></div><div class='review'><div class='review-num'>P · 126</div><p class='review-text'>너무 좋은 교안과 강의로 감동 받았습니다 대리님❤️<br>정말 유익한 강의였고, 지사 가서도 큰 도움이 될 것 같아요🫶</p></div></div>"},{"kind":"chapter","title":"부록: 만족도 평가 자유서술 후기 원문","html":"<div class='ch-marker small'>APPENDIX · 후기 원문</div><div class='rule small'></div><p class='lede'>응답 127–131</p><div class='review-list'><div class='review'><div class='review-num'>P · 127</div><p class='review-text'>지금 2주차까지 교육들으면서 김하연 대리님 강의가 제일 재밌고 집중이 잘되고 유익했어요!! 귀에 쏙쏙들어오고 행동까지 같이 하니까 저 스스로도 인정조사 나갔을때 하고있는 제 모습을 상상하게 되고 조금 더 실감이 났던것같아요 ㅎㅎㅎㅎ 특히 아름다운 미모에 계속 눈이 더 가게 된건 저말고도 다 그러시지 않았을까 생각합니다... 눈웃음이 너무 이쁘셔서 손예진닮았다고 계속 생각했쟈나요˃̵͈̑ᴗ˂̵͈̑ 강의 열정적으로 준비해주셔서 너무너무 감사합니다 지루한 강의들 사이에서 너무나 에너지가 넘치는 강의였어요❥❥❥</p></div><div class='review'><div class='review-num'>P · 128</div><p class='review-text'>다른 강의 해주시는 분들도 상세하고 재밌게 해주셨지만 대리님께서 해주시는 이 4시간 강의는 더욱 재밌고 좋았어요!!<br>오전이라 졸릴수도 있었는데 다양한 이벤트들, 그리고 직접 경험하신것들을 이야기해주셔서 너무 재밌었고! 인정조사표 보고 어려울 것같다 ㅠㅠ 힘들것같다ㅠㅠ 생각했었는데 대리님의 이해쏙쏙되는 강의로 오히려 흥미를 가지게 된 것같아서 너무 감사합니다🙇‍♀️<br>그리고,, 너무 이쁘시구 목소리도 좋으셔서 눈을 뗄 수 없었어요 ㅎㅎ</p></div><div class='review'><div class='review-num'>P · 129</div><p class='review-text'>준비를 오래 하신만큼 전달력이 좋았습니다.<br>중간 중간 현장 경험을 말씀해주시면서 좋은 팁들을 알려주셔서 더 기억에 남는 강의가 됐습니다.<br>또한 중간 아이스브레이킹이 될 수 있는 부분을 강의에 섞어 주셔서 지루하지 않은 수업이 됐습니다.<br> <br>다만 조금 아쉬웠던 부분은 설명해주시는 것도 좋았지만 문제를 생각하고 고민하는 시간도 조금 있었으면 좋았을 거 같습니다.<br><br>오늘 강의해주셔서 너무 고생하셨습니다. 감사합니다.</p></div><div class='review'><div class='review-num'>P · 130</div><p class='review-text'>하연 대리님! ෆ<br>현장에 나가 인정조사 할 때 현실적으로 필요한 꿀팁들과 노하우를 많이 알려주셔서 감사했습니다 ◡̈<br>다양한 사례들을 들려주시면서 수업 내용 설명해주셔서 이해하는게 더 수월했어요 !<br>한달가량 수업 준비를 하셨다고 했는데, 그만큼 좋은 퀄리티에 좋은 수업을 받을 수 있었던 것 같아서 감사하고 준비하느라 고생하셨습미당 ☺️<br><br>일잘하는 똑순이에 미모까지 열일하셔서 존경함니당 ,,, ㅎㅎㅎㅎㅎㅎ<br>다음에 또 뵐 수 있으면 좋겠습니다!<br>25년 한해 마무리 잘하시구 내년에도 빠이팅하세요!!🥰 <br>-25년 하반기 경인요양직 김지수-</p></div><div class='review'><div class='review-num'>P · 131</div><p class='review-text'>강의가 전혀 지루하지 않아요!!!! 설명을 이해하기 쉽게 잘 해주시고 당장 인정조사 가서 써먹을 수 있는 꿀팁들을 많이 알려주셔서 정말 좋은 강의었습니다! 저는 발표하는 것을 두려워하는 성격이지만 대리님의 강의를 듣고 너무 멋있어 보여서 저도 한 번 사내강사를 경험해보고 싶다는 생각이 들었습니다 최고!!!!!</p></div></div>"},{"kind":"colophon","title":"마지막 장","html":"\n<section class='colophon-page'>\n  <div class='colophon-rule top'></div>\n  <p class='colophon-kicker'>END OF BOOK</p>\n  <h2>\n    <span class='cover-title-main'>2025 하반기 신입직원 입문교육</span>\n    <span class='cover-title-subtitle'>분석 평가 리포트</span>\n  </h2>\n  <dl class='colophon-list'>\n    <div><dt>발행일</dt><dd>2026.05.25.</dd></div>\n    <div><dt>지은이</dt><dd>ChatGPT</dd></div>\n    <div><dt>기획 · 강의</dt><dd>김하연 대리</dd></div>\n    <div><dt>자료</dt><dd>2025 하반기 신입직원 입문교육 강의만족도평가</dd></div>\n  </dl>\n  <p class='colophon-note'>\n    이 전자책은 2025 하반기 신입직원 입문교육<br>\n    강의 회고 및 만족도 평가 기록을 바탕으로 제작되었습니다.\n  </p>\n  <div class='colophon-rule bottom'></div>\n</section>\n"}],"chapterPageMap":{"chapter-01":6,"chapter-02":7,"chapter-03":10,"chapter-04":11,"chapter-05":12,"chapter-06":13,"chapter-07":14,"chapter-08":15,"chapter-09":20,"chapter-10":21,"chapter-11":22,"chapter-12":23}}</script>
+<script>
+const data = JSON.parse(document.getElementById('bookData').textContent);
+const pages = data.pages;
+const chapterPageMap = data.chapterPageMap;
+let index = 0;
+let fontScale = 1;
+const book = document.getElementById('book');
+const pageCount = document.getElementById('pageCount');
+const progressFill = document.getElementById('progressFill');
+const sidebar = document.getElementById('sidebar');
+
+function isMobile() { return matchMedia('(max-width: 760px)').matches; }
+function clampIndex(i) {
+  const max = pages.length - 1;
+  i = Math.max(0, Math.min(max, i));
+  if (isMobile() && i === 0 && pages.length > 1) i = 1;
+  if (!isMobile() && i % 2 === 1) i -= 1;
+  return i;
+}
+function pageHtml(page, pos, n) {
+  if (!page) page = { kind: 'blank', title: '', html: '<div class="blank-mark"></div>' };
+  const printedPage = page.kind === 'blank' ? '' : Math.max(1, n);
+  const tocReturn = !['blank', 'image-cover', 'cover', 'prologue', 'toc', 'colophon'].includes(page.kind)
+    ? '<button class="page-toc-return" data-toc-return>목차</button>' : '';
+  return `<article class="page ${pos} ${isMobile() ? 'mobile-active' : ''}" data-kind="${page.kind}">
+    ${tocReturn}
+    <div class="page-inner">${page.html}</div>
+    <div class="scroll-indicator"><div class="scroll-thumb"></div></div>
+    <div class="page-number">${printedPage}</div>
+  </article>`;
+}
+function updateTocNumbers() {
+  document.querySelectorAll('.toc-row').forEach(btn => {
+    const target = btn.dataset.goto;
+    const n = chapterPageMap[target];
+    const el = btn.querySelector('.toc-page-num');
+    if (el && Number.isFinite(n)) el.textContent = String(n + 1).padStart(2, '0');
+  });
+}
+function render() {
+  index = clampIndex(index);
+  const mobile = isMobile();
+  const left = pages[index];
+  const right = mobile ? null : pages[index + 1];
+  book.innerHTML = mobile
+    ? pageHtml(left, 'right', index)
+    : pageHtml(left, 'left', index) + pageHtml(right, 'right', index + 1);
+  const totalReadable = Math.max(1, pages.length - 1);
+  const readablePage = mobile ? index : Math.min(index + 1, totalReadable);
+  pageCount.textContent = `${String(readablePage).padStart(2,'0')} / ${String(totalReadable).padStart(2,'0')}`;
+  progressFill.style.width = `${totalReadable <= 1 ? 0 : ((readablePage - 1) / (totalReadable - 1)) * 100}%`;
+  updateTocNumbers();
+  book.querySelectorAll('[data-goto]').forEach(btn => btn.addEventListener('click', () => goToChapter(btn.dataset.goto)));
+  book.querySelectorAll('[data-toc-return]').forEach(btn => btn.addEventListener('click', () => goToPage(4)));
+  book.querySelectorAll('.page').forEach(page => {
+    const inner = page.querySelector('.page-inner');
+    const thumb = page.querySelector('.scroll-thumb');
+    if (!inner || !thumb) return;
+    const updateScrollThumb = () => {
+      const overflow = inner.scrollHeight - inner.clientHeight;
+      page.classList.toggle('has-scroll', overflow > 12);
+      if (overflow <= 12) return;
+      const track = page.querySelector('.scroll-indicator');
+      const trackHeight = track.clientHeight;
+      const thumbHeight = Math.max(42, Math.round((inner.clientHeight / inner.scrollHeight) * trackHeight));
+      const top = Math.round((inner.scrollTop / overflow) * (trackHeight - thumbHeight));
+      thumb.style.height = `${thumbHeight}px`;
+      thumb.style.transform = `translateY(${top}px)`;
+    };
+    inner.addEventListener('scroll', updateScrollThumb);
+    updateScrollThumb();
+  });
+}
+function next() { index += isMobile() ? 1 : 2; render(); }
+function prev() { index -= isMobile() ? 1 : 2; render(); }
+function goToPage(n) { index = n; sidebar.classList.remove('open'); render(); }
+function goToChapter(id) { goToPage(chapterPageMap[id] || 0); }
+
+document.getElementById('nextBtn').addEventListener('click', next);
+document.getElementById('prevBtn').addEventListener('click', prev);
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight') next();
+  if (e.key === 'ArrowLeft') prev();
+  if (e.key.toLowerCase() === 't') sidebar.classList.toggle('open');
+});
+document.getElementById('menuBtn').addEventListener('click', () => sidebar.classList.toggle('open'));
+document.getElementById('fontUp').addEventListener('click', () => {
+  fontScale = Math.min(1.24, fontScale + .06);
+  document.documentElement.style.setProperty('--scale', fontScale.toFixed(2));
+});
+document.getElementById('fontDown').addEventListener('click', () => {
+  fontScale = Math.max(.88, fontScale - .06);
+  document.documentElement.style.setProperty('--scale', fontScale.toFixed(2));
+});
+document.getElementById('themeBtn').addEventListener('click', () => {
+  document.body.classList.toggle('light');
+  document.body.classList.toggle('dark');
+  const btn = document.getElementById('themeBtn');
+  btn.textContent = document.body.classList.contains('light') ? '☾' : '☀';
+});
+const sideLinks = document.getElementById('sideLinks');
+sideLinks.innerHTML = pages.filter(p => p.chapterStart)
+  .map(p => `<button class="side-link" data-goto="${p.chapterId}">${p.title.replace(/^\d+\.\s*/, '')}</button>`).join('');
+sideLinks.querySelectorAll('[data-goto]').forEach(btn => btn.addEventListener('click', () => goToChapter(btn.dataset.goto)));
+addEventListener('resize', render);
+render();
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e1f869da311e4775b75df520cf20bc63"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
